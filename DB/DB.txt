@@ -1,0 +1,15 @@
+Product 
+-Id 
+-CategoryId
+-Size
+-Color
+-Name
+-Brand
+-Quantity
+-Price
+
+Categories
+-Id
+-Name
+
+
