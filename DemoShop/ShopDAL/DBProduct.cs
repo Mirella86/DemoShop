@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopDAL
 {
-    public class Class1
+    public class DBProduct
     {
     }
 }
