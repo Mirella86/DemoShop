@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5210ECB3-FC8B-4B29-9F7F-0108D6701196}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{FC074FB6-86DB-4F5E-B01C-C642227E38E9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShopDAL</RootNamespace>
-    <AssemblyName>ShopDAL</AssemblyName>
+    <RootNamespace>ConsoleApp</RootNamespace>
+    <AssemblyName>ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -37,6 +39,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -46,63 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clothing.cs">
-      <DependentUpon>DemoShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\Entities\ClothingEntity.cs" />
-    <Compile Include="Cosmetic.cs">
-      <DependentUpon>DemoShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\Entities\CosmeticEntity.cs" />
-    <Compile Include="DemoShop.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoShop.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DemoShop.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DemoShop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\Entities\Entity.cs" />
-    <Compile Include="Implementations\Entities\UnitOfWork.cs" />
-    <Compile Include="Implementations\Repositories\ClothingRepository.cs" />
-    <Compile Include="Implementations\Repositories\CosmeticRepository.cs" />
-    <Compile Include="Implementations\Repositories\RepositoryBase.cs" />
-    <Compile Include="Interfaces\Entities\IEntity.cs" />
-    <Compile Include="Interfaces\Repositories\IClothingRepository.cs" />
-    <Compile Include="Interfaces\Repositories\ICosmeticRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IRepository.cs" />
-    <Compile Include="Interfaces\Entities\IUnitOfWork.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DemoShop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DemoShop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="DemoShop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-      <LastGenOutput>DemoShop.Context.cs</LastGenOutput>
-    </None>
-    <None Include="DemoShop.edmx.diagram">
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-    </None>
-    <None Include="DemoShop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-      <LastGenOutput>DemoShop.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\ShopDAL\ShopDAL.csproj">
+      <Project>{5210ecb3-fc8b-4b29-9f7f-0108d6701196}</Project>
+      <Name>ShopDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

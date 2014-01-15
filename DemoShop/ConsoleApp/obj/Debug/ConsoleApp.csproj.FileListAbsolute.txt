@@ -1,0 +1,10 @@
+D:\Git\DemoShop\DemoShop\ConsoleApp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ConsoleApp.exe
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ConsoleApp.pdb
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ShopDAL.dll
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\EntityFramework.xml
+D:\Git\DemoShop\DemoShop\ConsoleApp\obj\Debug\ConsoleApp.exe
+D:\Git\DemoShop\DemoShop\ConsoleApp\obj\Debug\ConsoleApp.pdb

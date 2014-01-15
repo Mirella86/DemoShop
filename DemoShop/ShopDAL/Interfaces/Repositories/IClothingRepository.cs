@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShopDAL
 {
-    public class DBProduct
+    public interface IClothingRepository : IRepository<Clothing, int>
     {
+
     }
 }
