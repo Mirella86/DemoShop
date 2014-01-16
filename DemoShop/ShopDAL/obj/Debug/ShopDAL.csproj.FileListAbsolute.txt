@@ -1,7 +1,10 @@
 D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll.config
 D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll
 D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\Castle.Core.dll
 D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\Castle.Core.xml
 D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\EntityFramework.xml
+D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.csprojResolveAssemblyReference.cache
 D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.dll
 D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.pdb

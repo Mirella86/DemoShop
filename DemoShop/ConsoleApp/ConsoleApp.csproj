@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -49,8 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindsorFactoryResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,6 +68,14 @@
     <ProjectReference Include="..\ShopDAL\ShopDAL.csproj">
       <Project>{5210ecb3-fc8b-4b29-9f7f-0108d6701196}</Project>
       <Name>ShopDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopDomainServices\ShopDomainServices.csproj">
+      <Project>{213bdcb0-d568-4b64-9fc7-75a280c836fb}</Project>
+      <Name>ShopDomainServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopModelMapper\ShopModelMapper.csproj">
+      <Project>{C720AA52-5724-4E2E-9CE7-80D6362DFBFC}</Project>
+      <Name>ShopModelMapper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

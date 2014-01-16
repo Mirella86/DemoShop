@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -39,6 +42,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,11 +53,11 @@
     <Compile Include="Clothing.cs">
       <DependentUpon>DemoShop.tt</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\Entities\ClothingEntity.cs" />
+    <Compile Include="Classes\ClothingEntity.cs" />
     <Compile Include="Cosmetic.cs">
       <DependentUpon>DemoShop.tt</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\Entities\CosmeticEntity.cs" />
+    <Compile Include="Classes\CosmeticEntity.cs" />
     <Compile Include="DemoShop.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,16 +73,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DemoShop.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\Entities\Entity.cs" />
-    <Compile Include="Implementations\Entities\UnitOfWork.cs" />
-    <Compile Include="Implementations\Repositories\ClothingRepository.cs" />
-    <Compile Include="Implementations\Repositories\CosmeticRepository.cs" />
-    <Compile Include="Implementations\Repositories\RepositoryBase.cs" />
-    <Compile Include="Interfaces\Entities\IEntity.cs" />
-    <Compile Include="Interfaces\Repositories\IClothingRepository.cs" />
-    <Compile Include="Interfaces\Repositories\ICosmeticRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IRepository.cs" />
-    <Compile Include="Interfaces\Entities\IUnitOfWork.cs" />
+    <Compile Include="Classes\Entity.cs" />
+    <Compile Include="Classes\ShopUnitOfWork.cs" />
+    <Compile Include="Classes\ClothingRepository.cs" />
+    <Compile Include="Classes\CosmeticRepository.cs" />
+    <Compile Include="Classes\RepositoryBase.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IClothingRepository.cs" />
+    <Compile Include="Interfaces\ICosmeticRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Classes\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
