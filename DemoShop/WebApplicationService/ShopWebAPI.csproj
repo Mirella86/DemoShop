@@ -299,9 +299,9 @@
       <Project>{5210ecb3-fc8b-4b29-9f7f-0108d6701196}</Project>
       <Name>ShopDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShopDomainServices\ShopDomainServices.csproj">
+    <ProjectReference Include="..\ShopDomainServices\ShopDALServices.csproj">
       <Project>{213bdcb0-d568-4b64-9fc7-75a280c836fb}</Project>
-      <Name>ShopDomainServices</Name>
+      <Name>ShopDALServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShopModelMapper\ShopModelMapper.csproj">
       <Project>{c720aa52-5724-4e2e-9ce7-80d6362dfbfc}</Project>

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShopDAL;
+using ShopDALServices;
 
-namespace ShopDomainServices
+namespace ShopDALServices
 {
-    public interface ICosmeticService: IDomainServiceBase<Cosmetic>
+    public interface IDALClothingService : IDALServiceBase<Clothing>
     {
     }
 }

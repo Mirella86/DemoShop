@@ -1,0 +1,11 @@
+D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDALServices.csprojResolveAssemblyReference.cache
+D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDAL.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.xml

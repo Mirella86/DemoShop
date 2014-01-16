@@ -11,7 +11,7 @@ using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Castle.MicroKernel.Registration;
 using ShopDAL;
-using ShopDomainServices;
+using ShopDALServices;
 using ShopModelMapper;
 
 namespace WebApplicationService
@@ -40,7 +40,7 @@ namespace WebApplicationService
             _container.Install(FromAssembly.This());
 
             _container.Register(Castle.MicroKernel.Registration.Component.For(typeof(IRepository<>)).ImplementedBy(typeof(RepositoryBase<>)));
-            _container.Register(Castle.MicroKernel.Registration.Component.For(typeof(IDomainServiceBase<>)).ImplementedBy(typeof(DomainServiceBase<>)));
+            _container.Register(Castle.MicroKernel.Registration.Component.For(typeof(IDALServiceBase<>)).ImplementedBy(typeof(DALServiceBase<>)));
             _container.Register(Castle.MicroKernel.Registration.Component.For(typeof(IMapper<Cosmetic>)).ImplementedBy(typeof(CosmeticMapper)));
             _container.Register(Castle.MicroKernel.Registration.Component.For(typeof(IMapper<Clothing>)).ImplementedBy(typeof(ClothingMapper)));
             _container.Register(Castle.MicroKernel.Registration.Component.For<UnitOfWork>().ImplementedBy<ShopUnitOfWork>());

@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 using ShopDAL;
 using ShopModelMapper;
 
-namespace ShopDomainServices
+namespace ShopDALServices
 {
-    public interface IDomainServiceBase
-    {
-    }
 
-    public interface IDomainServiceBase<TEntity> : IDomainServiceBase where TEntity : Entity
+    public interface IDALServiceBase<TEntity>  where TEntity : Entity
     {
 
         IEnumerable<IModel> GetAll();

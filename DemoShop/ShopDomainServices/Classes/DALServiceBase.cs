@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShopDAL;
-using ShopDomainServices;
+using ShopDALServices;
 using ShopModelMapper;
 
-namespace ShopDomainServices
+namespace ShopDALServices
 {
-    public class DomainServiceBase<TEntity> : IDomainServiceBase<TEntity> where TEntity : Entity
+    public class DALServiceBase<TEntity> : IDALServiceBase<TEntity> where TEntity : Entity
     {
         protected IRepository<TEntity> _repository;
         protected IMapper<TEntity> _mapper;
 
-        public DomainServiceBase(IRepository<TEntity> repository, IMapper<TEntity> mapper)
+        public DALServiceBase(IRepository<TEntity> repository, IMapper<TEntity> mapper)
         {
             if (repository == null || mapper == null)
                 throw new ArgumentNullException("repository");

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{213BDCB0-D568-4B64-9FC7-75A280C836FB}</ProjectGuid>
+    <ProjectGuid>{1473EB1E-911D-4095-A302-D9C7E9A1557B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShopDomainServices</RootNamespace>
-    <AssemblyName>ShopDomainServices</AssemblyName>
+    <RootNamespace>ShopBL</RootNamespace>
+    <AssemblyName>ShopBL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,12 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ClothingService.cs" />
-    <Compile Include="Classes\CosmeticService.cs" />
-    <Compile Include="Classes\DomainServiceBase.cs" />
-    <Compile Include="Interfaces\IClothingService.cs" />
-    <Compile Include="Interfaces\ICosmeticService.cs" />
-    <Compile Include="Interfaces\IDomainServiceBase.cs" />
+    <Compile Include="DomainService.cs" />
+    <Compile Include="IDomainService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,10 +54,17 @@
       <Project>{5210ecb3-fc8b-4b29-9f7f-0108d6701196}</Project>
       <Name>ShopDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShopDomainServices\ShopDALServices.csproj">
+      <Project>{213bdcb0-d568-4b64-9fc7-75a280c836fb}</Project>
+      <Name>ShopDALServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShopModelMapper\ShopModelMapper.csproj">
       <Project>{c720aa52-5724-4e2e-9ce7-80d6362dfbfc}</Project>
       <Name>ShopModelMapper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
