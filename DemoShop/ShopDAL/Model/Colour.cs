@@ -11,10 +11,12 @@ namespace ShopDAL.Model
 {
     using System;
     using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Colour
     {
         public int Id { get; set; }
-        public string Value { get; set; }
+		[Column("Value")]
+        public string Name { get; set; }
     }
 }

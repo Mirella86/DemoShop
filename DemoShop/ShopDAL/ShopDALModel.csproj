@@ -11,6 +11,7 @@
     <AssemblyName>ShopDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -46,47 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201401151528048_InitialCreate.cs" />
-    <Compile Include="Migrations\201401151528048_InitialCreate.Designer.cs">
-      <DependentUpon>201401151528048_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Brand.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Clothes.cs" />
+    <Compile Include="Model\ClothesSubCategories.cs" />
     <Compile Include="Model\Colour.cs" />
+    <Compile Include="Model\Cosmetic.cs" />
+    <Compile Include="Model\CosmeticSubCategories.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\ProductSubCategories.cs" />
+    <Compile Include="Model\ProductSubCategory.cs" />
     <Compile Include="Model\ShopContext.cs" />
-    <Compile Include="Model\Shop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Shop.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ModelMapping\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Model\Shop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Shop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201401151528048_InitialCreate.resx">
-      <DependentUpon>201401151528048_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

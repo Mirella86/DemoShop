@@ -12,10 +12,9 @@ namespace ShopDAL.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public abstract class Product
     {
         public int Id { get; set; }
-        public int MainCategoryId { get; set; }
         public int SizeId { get; set; }
         public int BrandId { get; set; }
         public int DestinationId { get; set; }
@@ -23,8 +22,6 @@ namespace ShopDAL.Model
         public string Code { get; set; }
 		public string Name { get; set; }
         public double Price { get; set; }
-        public DateTime? FabricationDate { get; set; }
-        public DateTime? ExpireDate { get; set; }
-		public virtual ICollection<ProductSubCategories> ProductSubCategories { get; set; }
+      
     }
 }

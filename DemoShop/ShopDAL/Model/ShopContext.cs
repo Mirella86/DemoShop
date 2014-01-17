@@ -25,13 +25,14 @@ namespace ShopDAL.Model
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 		}
 
-    
-        public DbSet<Product> Products { get; set; }
+		public DbSet<Clothes> Clothes { get; set; }
+        public DbSet<Cosmetic> Cosmetic { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Destination> Destinations { get; set; }
-        public DbSet<ProductSubCategories> ProductSubCategories { get; set; }
-        public DbSet<Colour> Colours { get; set; }
+	    public DbSet<ClothesSubCategories> ClothesSubCategories { get; set; }
+		public DbSet<CosmeticSubCategories> CosmeticSubCategories { get; set; }
+	    public DbSet<Colour> Colours { get; set; }
     }
 }
