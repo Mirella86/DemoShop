@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBEntities;
 
 namespace ShopDAL
 {
-    public class ClothingRepository : RepositoryBase<Clothing>, IClothingRepository
+    public class ClothingRepository : Repository<Clothing>, IClothingRepository
     {
-        public ClothingRepository(UnitOfWork unitOfWork) : base(unitOfWork)
-        {
-        }
+     
     }
 }

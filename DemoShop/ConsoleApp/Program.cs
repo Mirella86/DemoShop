@@ -7,43 +7,35 @@ using System.Threading.Tasks;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
+using DBEntities;
 using ShopDAL;
-using ShopDALServices;
+using ShopDomainServices;
 using ShopModelMapper;
 
 namespace ConsoleApp
 {
     class Program
     {
-   //     private static WindsorContainer _container;
+        private static WindsorContainer _container;
 
         public static void Main(string[] args)
         {
 
+            InitializeWindsor();
 
+            IClothingDomainService clothingDomainService = _container.Resolve<IClothingDomainService>();
+            IEnumerable<IModel> clothingModels = clothingDomainService.GetAll();
+            clothingDomainService.Insert(new ClothingModel { Name = "H&M pants", Size = "34" });
+            clothingDomainService.Delete(18);
+            foreach (var clothing in clothingModels)
+            {
+                Console.WriteLine("{0}: {1}", ((ClothingModel)clothing).Name, ((ClothingModel)clothing).Size);
+            }
 
-      //      InitializeWindsor();
+            //      IDomainServiceBase<Clothing> clothingService = _container.Resolve<IDomainServiceBase<Clothing>>();
+            //        clothingService.Insert(new ClothingModel { Name = "Lee Cooper jeans blabla", Size = "34" });
 
-            //   IRepository<Clothing> repository = _container.Resolve<IRepository<Clothing>>();
-         
-
-     //      IDomainServiceBase<Clothing> clothingService = _container.Resolve<IDomainServiceBase<Clothing>>();
-    //        clothingService.Insert(new ClothingModel { Name = "Lee Cooper jeans blabla", Size = "34" });
-
-    //        IEnumerable<IModel> clothingModels = clothingService.GetAll();
-
-            //foreach (var clothing in clothingModels)
-            //{
-            //    Console.WriteLine("{0}: {1}", ((ClothingModel)clothing).Name, ((ClothingModel)clothing).Size);
-            //}
-            //Console.WriteLine();
-
-            //var cloth = clothingModels.ElementAt(1);
-            //Console.WriteLine("Deleting element: {0}", ((ClothingModel)cloth).Name);
-            //clothingService.Delete(clothingModels.ElementAt(1));
-
-            //Console.WriteLine();
-            //clothingModels = clothingService.GetAll();
+            //        IEnumerable<IModel> clothingModels = clothingService.GetAll();
 
             //foreach (var clothing in clothingModels)
             //{
@@ -51,25 +43,22 @@ namespace ConsoleApp
             //}
             //Console.WriteLine();
 
-            //IDomainServiceBase<Cosmetic> cosmeticService = _container.Resolve<IDomainServiceBase<Cosmetic>>();
-            //IModel cosmetic = cosmeticService.Get(1);
-            //Console.WriteLine("{0}: {1}", ((CosmeticModel)cosmetic).Name, cosmetic.Id);
 
         }
 
-        //private static void InitializeWindsor()
-        //{
-        //    _container = new WindsorContainer();
-        //    _container.Install(FromAssembly.This());
+        private static void InitializeWindsor()
+        {
+            _container = new WindsorContainer();
+            _container.Install(FromAssembly.This());
 
-        //    _container.Register(Component.For(typeof(IRepository<>)).ImplementedBy(typeof(RepositoryBase<>)).LifeStyle.Transient);
-        //    _container.Register(Component.For(typeof(IDomainServiceBase<>)).ImplementedBy(typeof(DomainServiceBase<>)).LifeStyle.Transient);
-        //    _container.Register(Component.For(typeof(IMapper<Cosmetic>)).ImplementedBy(typeof(CosmeticMapper)).LifeStyle.Transient);
-        //    _container.Register(Component.For(typeof(IMapper<Clothing>)).ImplementedBy(typeof(ClothingMapper)).LifeStyle.Transient);
-        //    _container.Register(Component.For<UnitOfWork>().ImplementedBy<ShopUnitOfWork>().LifeStyle.Transient);
-        //    _container.Register(Component.For<IEntity>().ImplementedBy<Entity>().LifeStyle.Transient);
+            _container.Register(Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).LifeStyle.Transient);
+            _container.Register(Component.For(typeof(IDomainService<>)).ImplementedBy(typeof(DomainService<>)).LifeStyle.Transient);
+            _container.Register(Component.For(typeof(IMapper<Cosmetic>)).ImplementedBy(typeof(CosmeticMapper)).LifeStyle.Transient);
+            _container.Register(Component.For(typeof(IMapper<Clothing>)).ImplementedBy(typeof(ClothingMapper)).LifeStyle.Transient);
+            _container.Register(Component.For<ICosmeticDomainService>().ImplementedBy<CosmeticDomainService>().LifeStyle.Transient);
+            _container.Register(Component.For<IClothingDomainService>().ImplementedBy<ClothingDomainService>().LifeStyle.Transient);
+            _container.Register(Component.For<IEntity>().ImplementedBy<Entity>().LifeStyle.Transient);
 
-
-        //}
+        }
     }
 }

@@ -50,66 +50,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clothing.cs">
-      <DependentUpon>DemoShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\ClothingEntity.cs" />
-    <Compile Include="Cosmetic.cs">
-      <DependentUpon>DemoShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\CosmeticEntity.cs" />
-    <Compile Include="DemoShop.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoShop.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DemoShop.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DemoShop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\Entity.cs" />
-    <Compile Include="Classes\ShopUnitOfWork.cs" />
+    <Compile Include="Classes\UnitOfWork.cs" />
     <Compile Include="Classes\ClothingRepository.cs" />
     <Compile Include="Classes\CosmeticRepository.cs" />
-    <Compile Include="Classes\RepositoryBase.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Classes\Repository.cs" />
     <Compile Include="Interfaces\IClothingRepository.cs" />
     <Compile Include="Interfaces\ICosmeticRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Classes\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DemoShop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DemoShop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="DemoShop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-      <LastGenOutput>DemoShop.Context.cs</LastGenOutput>
-    </None>
-    <None Include="DemoShop.edmx.diagram">
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-    </None>
-    <None Include="DemoShop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DemoShop.edmx</DependentUpon>
-      <LastGenOutput>DemoShop.cs</LastGenOutput>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBEntities\DBEntities.csproj">
+      <Project>{9e1f699e-7ae4-4e6a-bc60-33438ca20842}</Project>
+      <Name>DBEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

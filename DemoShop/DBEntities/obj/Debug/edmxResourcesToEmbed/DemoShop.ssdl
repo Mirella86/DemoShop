@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DemoShopModelStoreContainer">
+    <EntitySet Name="Clothing" EntityType="DemoShopModel.Store.Clothing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cosmetic" EntityType="DemoShopModel.Store.Cosmetic" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Clothing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cosmetic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+</Schema>

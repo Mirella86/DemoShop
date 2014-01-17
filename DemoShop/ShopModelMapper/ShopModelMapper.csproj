@@ -45,10 +45,13 @@
     <Compile Include="CosmeticModel.cs" />
     <Compile Include="IMapper.cs" />
     <Compile Include="IModel.cs" />
-    <Compile Include="MapperBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DBEntities\DBEntities.csproj">
+      <Project>{9e1f699e-7ae4-4e6a-bc60-33438ca20842}</Project>
+      <Name>DBEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShopDAL\ShopDAL.csproj">
       <Project>{5210ecb3-fc8b-4b29-9f7f-0108d6701196}</Project>
       <Name>ShopDAL</Name>
