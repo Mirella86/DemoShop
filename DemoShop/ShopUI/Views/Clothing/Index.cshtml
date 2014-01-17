@@ -7,22 +7,22 @@
 
 <table>
     <thead><tr>
-        <th>Id</th><th>Name</th><th>Size</th><th></th>
-    </tr></thead>
+               <th>Id</th><th>Name</th><th>Size</th><th></th>
+           </tr></thead>
 
     <h2>Clothing list <span data-bind="text: clothings().length"/></h2>
     <tbody data-bind="foreach: clothings">
         <tr>
             <td><input data-bind="value: Name" /></td>
             <td><input data-bind="value: Size" /></td>
-@*            <td data-bind="text: formattedPrice"></td>*@
+            @*            <td data-bind="text: formattedPrice"></td>*@
             <td><button data-bind="click: $root.removeClothing">Remove</button></td>
-            <td><button data-bind="click: $root.updateClothing">Update</button></td>
         </tr>
     </tbody>
 </table>
+<input type="hidden" data-bind="value: ValidObject"/>
 <button data-bind="click: addClothing, enable: clothings().length < 50">Add another clothing article</button>
-<button data-bind="click: updateAll, enable: validateFields() == true">Update all</button>
+<button data-bind="click: updateAll, enable: ValidObject()">Update all</button>
 @*<h3 data-bind="visible: totalPrice() > 0">
     Total surcharge: $<span data-bind="text: totalPrice().toFixed(2)"></span>
 </h3>*@

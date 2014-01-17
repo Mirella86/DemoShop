@@ -30,7 +30,7 @@ $(document).ready(function () {
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
                     self.clothings(data);
-                 //   alert('succes');
+                    alert('succes');
                 },
                 error: function () {
                     alert("error");
@@ -38,34 +38,20 @@ $(document).ready(function () {
             });
         };
 
-        self.updateClothing = function() {};
+
+        //self.ValidObject = ko.computed(function () {
+        //    $.each(self.clothings, function (index, value) {
+        //        if (value.Name.length == 0 || value.Size.length == 0)
+        //            return false;
+        //    });
+        //    return true;
+        //});
+
+        self.updateAll = function() {};
 
         self.addClothing = function () {
             self.clothings.push(new Clothing("", "", ""));
 
-        //    var clothing=new Object{id=}
-        //    $.ajax({
-        //        url: 'http://localhost/ShopWebAPI/Clothing/',
-        //        type: 'PUT',
-        //        data: 
-        //        contentType: 'application/json; charset=utf-8',
-        //        success: function (data) {
-        //            self.clothings(data);
-        //            alert('succes');
-        //        },
-        //        error: function () {
-        //            alert("error");
-        //        }
-        //});
-
-        };
-
-        self.validateFields = function () {
-            $.each(self.clothings, function(index, value) {
-                if (value.Name.length == 0 || value.Size.length == 0)
-                    return false;
-            });
-            return true;
         };
 
         self.removeClothing = function (clothing) {
