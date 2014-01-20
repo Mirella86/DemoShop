@@ -1,9 +1,0 @@
-<Modules>
-  <Module PersistentId="5210ECB3-FC8B-4B29-9F7F-0108D6701196" ModuleId="ShopDAL" />
-  <Module PersistentId="B63150E6-AD85-4C98-9A10-0C101E39D3CE" ModuleId="ShopUI" />
-  <Module PersistentId="A5043A73-5CFC-48C5-824F-23A1CD0BAD8E" ModuleId="ShopDALRepository" />
-  <Module PersistentId="7B05C01B-51C4-4366-B926-9641BBE2F351" ModuleId="ShopDALServices" />
-  <Module PersistentId="B6A6892F-1AE5-4A19-83D6-5466E65525DC" ModuleId="ShopDALMapper" />
-  <Module PersistentId="D5436EBD-A39D-4614-BD2B-EE713D5AD14B" ModuleId="ShopDTO" />
-  <Module PersistentId="9A1A48B6-66E7-4AC9-AAE2-A5E7152A60C4" ModuleId="ShopDALModel" />
-</Modules>
