@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDALModel", "ShopDAL\ShopDALModel.csproj", "{5210ECB3-FC8B-4B29-9F7F-0108D6701196}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopUI", "ShopUI\ShopUI.csproj", "{B63150E6-AD85-4C98-9A10-0C101E39D3CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopUI.Tests", "ShopUI.Tests\ShopUI.Tests.csproj", "{E2C9B299-8200-4E8B-9584-2F2B5C6EAFA9}"
@@ -11,16 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDALRepository", "ShopDA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDALServices", "ShopDALServices\ShopDALServices.csproj", "{7B05C01B-51C4-4366-B926-9641BBE2F351}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDALMapper", "ShopDALMapper\ShopDALMapper.csproj", "{B6A6892F-1AE5-4A19-83D6-5466E65525DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDTO", "ShopDTO\ShopDTO.csproj", "{D5436EBD-A39D-4614-BD2B-EE713D5AD14B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDALModel", "ShopDALModel\ShopDALModel.csproj", "{9A1A48B6-66E7-4AC9-AAE2-A5E7152A60C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5210ECB3-FC8B-4B29-9F7F-0108D6701196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5210ECB3-FC8B-4B29-9F7F-0108D6701196}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5210ECB3-FC8B-4B29-9F7F-0108D6701196}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5210ECB3-FC8B-4B29-9F7F-0108D6701196}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B63150E6-AD85-4C98-9A10-0C101E39D3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B63150E6-AD85-4C98-9A10-0C101E39D3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B63150E6-AD85-4C98-9A10-0C101E39D3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,6 +37,18 @@ Global
 		{7B05C01B-51C4-4366-B926-9641BBE2F351}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B05C01B-51C4-4366-B926-9641BBE2F351}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B05C01B-51C4-4366-B926-9641BBE2F351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A6892F-1AE5-4A19-83D6-5466E65525DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A6892F-1AE5-4A19-83D6-5466E65525DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A6892F-1AE5-4A19-83D6-5466E65525DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A6892F-1AE5-4A19-83D6-5466E65525DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5436EBD-A39D-4614-BD2B-EE713D5AD14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5436EBD-A39D-4614-BD2B-EE713D5AD14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5436EBD-A39D-4614-BD2B-EE713D5AD14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5436EBD-A39D-4614-BD2B-EE713D5AD14B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A1A48B6-66E7-4AC9-AAE2-A5E7152A60C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A1A48B6-66E7-4AC9-AAE2-A5E7152A60C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A1A48B6-66E7-4AC9-AAE2-A5E7152A60C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A1A48B6-66E7-4AC9-AAE2-A5E7152A60C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
