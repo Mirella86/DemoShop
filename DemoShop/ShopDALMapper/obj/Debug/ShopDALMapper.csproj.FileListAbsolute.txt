@@ -1,0 +1,7 @@
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\bin\Debug\ShopDALMapper.dll
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\bin\Debug\ShopDALMapper.pdb
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\bin\Debug\ShopDTO.dll
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\bin\Debug\ShopDTO.pdb
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\obj\Debug\ShopDALMapper.csprojResolveAssemblyReference.cache
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\obj\Debug\ShopDALMapper.dll
+D:\Iuliana\Projects\DemoShop\DemoShop\ShopDALMapper\obj\Debug\ShopDALMapper.pdb
