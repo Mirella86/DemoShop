@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopModelMapper
+namespace ShopModels
 {
     public abstract class IModel 
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DBEntities;
 using ShopDAL;
 using ShopModelMapper;
+using ShopModels;
 
 namespace ShopDomainServices
 {
@@ -34,6 +35,10 @@ namespace ShopDomainServices
             return _mapper.GetModelFromEntity(_repository.Get(id));
         }
 
+        public IModel GetWithChildren(int id, string[] children)
+        {
+            return _mapper.GetModelFromEntity(_repository.GetWithChildren(_mapper.GetEntityFromModelKey(id), children));
+        }
 
         public void Insert(IModel model)
         {

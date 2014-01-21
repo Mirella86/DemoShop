@@ -18,3 +18,5 @@ D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\Castle.Windsor.xml
 D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\EntityFramework.xml
 D:\Git\DemoShop\DemoShop\ConsoleApp\obj\Debug\ConsoleApp.exe
 D:\Git\DemoShop\DemoShop\ConsoleApp\obj\Debug\ConsoleApp.pdb
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ConsoleApp\bin\Debug\ShopModels.pdb

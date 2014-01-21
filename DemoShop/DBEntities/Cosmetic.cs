@@ -16,5 +16,11 @@ namespace DBEntities
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int BrandId { get; set; }
+        public int CategoryId { get; set; }
+        public int Stock { get; set; }
+    
+        public virtual Clothing_Brand Clothing_Brand { get; set; }
+        public virtual Cosmetic_Category Cosmetic_Category { get; set; }
     }
 }

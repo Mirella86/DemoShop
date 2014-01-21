@@ -14,8 +14,20 @@ namespace DBEntities
     
     public partial class Clothing
     {
+        public Clothing()
+        {
+            this.Clothing_Stock = new HashSet<Clothing_Stock>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Size { get; set; }
+        public int BrandId { get; set; }
+        public int GenderId { get; set; }
+        public int CategoryId { get; set; }
+    
+        public virtual Clothing_Brand Clothing_Brand { get; set; }
+        public virtual Clothing_Category Clothing_Category { get; set; }
+        public virtual Clothing_Gender Clothing_Gender { get; set; }
+        public virtual ICollection<Clothing_Stock> Clothing_Stock { get; set; }
     }
 }

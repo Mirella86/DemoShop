@@ -49,21 +49,6 @@ namespace WebApplicationService
             get { return _container.Resolve<IClothingDomainService>(); }
         }
 
-        //public IDomainService GetService(IModel model)
-        //{
-        //    switch (model.GetType().Name)
-        //    {
-        //        case "ICosmeticModel":
-        //            return _container.Resolve<ICosmeticDomainService>();
-        //            break;
-        //        case "IClothingModel":
-        //            return _container.Resolve<IClothingDomainService>();
-        //            break;
-        //        default:
-        //            return null;
-        //    }
-        //}
-
         private void InitializeWindsor()
         {
             _container = new WindsorContainer();

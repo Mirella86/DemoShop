@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Objects;
 using System.Linq;
 using System.Linq.Expressions;
@@ -25,11 +26,52 @@ namespace ShopDAL
             }
         }
 
+
+        public IEnumerable<TEntity> GetAllWithChildren(IEnumerable<string> children)
+        {
+            using (var unitOfWork = new UnitOfWork<TEntity>())
+            {
+                var entities = unitOfWork.dbSet.AsQueryable<TEntity>();
+
+                foreach (var child in children)
+                {
+                    entities = entities.Include(child);
+                }
+
+                foreach (var element in entities)
+                {
+                    yield return element;
+
+                }
+            }
+        }
+
         public TEntity Get(int key)
         {
             using (var unitOfWork = new UnitOfWork<TEntity>())
             {
                 return unitOfWork.dbSet.Find(key);
+            }
+        }
+
+        public TEntity GetWithChildren(TEntity entity, IEnumerable<string> children)
+        {
+            using (var unitOfWork = new UnitOfWork<TEntity>())
+            {
+                IQueryable<TEntity> entities = unitOfWork.dbSet.AsQueryable<TEntity>();
+
+                foreach (var child in children)
+                {
+                    entities = entities.Include(child);
+                }
+
+                foreach (var ent in entities)
+                {
+                    if (ent.CompareTo(entity))
+                        return ent;
+                }
+                return null;
+
             }
         }
 
@@ -62,5 +104,6 @@ namespace ShopDAL
                 unitOfWork.SaveChanges();
             }
         }
+
     }
 }

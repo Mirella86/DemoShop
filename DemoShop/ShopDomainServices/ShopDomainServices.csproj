@@ -60,6 +60,10 @@
       <Project>{c720aa52-5724-4e2e-9ce7-80d6362dfbfc}</Project>
       <Name>ShopModelMapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShopModels\ShopModels.csproj">
+      <Project>{bccadf87-2d98-41c0-868f-e19b2dd02a8c}</Project>
+      <Name>ShopModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

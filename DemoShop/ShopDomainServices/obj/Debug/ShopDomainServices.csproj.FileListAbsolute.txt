@@ -11,3 +11,5 @@ D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.pdb
 D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.xml
 D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.dll
 D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModels.pdb

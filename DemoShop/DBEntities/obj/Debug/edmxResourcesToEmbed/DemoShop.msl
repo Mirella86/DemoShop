@@ -6,13 +6,68 @@
         <MappingFragment StoreEntitySet="Clothing">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clothing_Brand">
+      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Brand">
+        <MappingFragment StoreEntitySet="Clothing_Brand">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clothing_Category">
+      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Category">
+        <MappingFragment StoreEntitySet="Clothing_Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clothing_Gender">
+      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Gender">
+        <MappingFragment StoreEntitySet="Clothing_Gender">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clothing_Stock">
+      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Stock">
+        <MappingFragment StoreEntitySet="Clothing_Stock">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="ClothingId" ColumnName="ClothingId" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cosmetics">
       <EntityTypeMapping TypeName="DemoShopModel.Cosmetic">
         <MappingFragment StoreEntitySet="Cosmetic">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cosmetic_Brand">
+      <EntityTypeMapping TypeName="DemoShopModel.Cosmetic_Brand">
+        <MappingFragment StoreEntitySet="Cosmetic_Brand">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cosmetic_Category">
+      <EntityTypeMapping TypeName="DemoShopModel.Cosmetic_Category">
+        <MappingFragment StoreEntitySet="Cosmetic_Category">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>

@@ -162,3 +162,5 @@ D:\Git\DemoShop\DemoShop\ShopWebAPI\bin\zh-Hant\System.Spatial.resources.dll
 D:\Git\DemoShop\DemoShop\ShopWebAPI\obj\Debug\ShopWebAPI.csprojResolveAssemblyReference.cache
 D:\Git\DemoShop\DemoShop\ShopWebAPI\obj\Debug\WebApplicationService.dll
 D:\Git\DemoShop\DemoShop\ShopWebAPI\obj\Debug\WebApplicationService.pdb
+D:\Git\DemoShop\DemoShop\ShopWebAPI\bin\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopWebAPI\bin\ShopModels.pdb

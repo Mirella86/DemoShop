@@ -26,6 +26,12 @@ namespace DBEntities
         }
     
         public DbSet<Clothing> Clothings { get; set; }
+        public DbSet<Clothing_Brand> Clothing_Brand { get; set; }
+        public DbSet<Clothing_Category> Clothing_Category { get; set; }
+        public DbSet<Clothing_Gender> Clothing_Gender { get; set; }
+        public DbSet<Clothing_Stock> Clothing_Stock { get; set; }
         public DbSet<Cosmetic> Cosmetics { get; set; }
+        public DbSet<Cosmetic_Brand> Cosmetic_Brand { get; set; }
+        public DbSet<Cosmetic_Category> Cosmetic_Category { get; set; }
     }
 }

@@ -2,21 +2,172 @@
 <Schema Namespace="DemoShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="DemoShopModelStoreContainer">
     <EntitySet Name="Clothing" EntityType="DemoShopModel.Store.Clothing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clothing_Brand" EntityType="DemoShopModel.Store.Clothing_Brand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clothing_Category" EntityType="DemoShopModel.Store.Clothing_Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clothing_Gender" EntityType="DemoShopModel.Store.Clothing_Gender" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clothing_Stock" EntityType="DemoShopModel.Store.Clothing_Stock" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Cosmetic" EntityType="DemoShopModel.Store.Cosmetic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cosmetic_Brand" EntityType="DemoShopModel.Store.Cosmetic_Brand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cosmetic_Category" EntityType="DemoShopModel.Store.Cosmetic_Category" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Clothing_Clothing_Brand" Association="DemoShopModel.Store.FK_Clothing_Clothing_Brand">
+      <End Role="Clothing_Brand" EntitySet="Clothing_Brand" />
+      <End Role="Clothing" EntitySet="Clothing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clothing_Clothing_Category" Association="DemoShopModel.Store.FK_Clothing_Clothing_Category">
+      <End Role="Clothing_Category" EntitySet="Clothing_Category" />
+      <End Role="Clothing" EntitySet="Clothing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clothing_Clothing_Gender" Association="DemoShopModel.Store.FK_Clothing_Clothing_Gender">
+      <End Role="Clothing_Gender" EntitySet="Clothing_Gender" />
+      <End Role="Clothing" EntitySet="Clothing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clothing_Stock_Clothing" Association="DemoShopModel.Store.FK_Clothing_Stock_Clothing">
+      <End Role="Clothing" EntitySet="Clothing" />
+      <End Role="Clothing_Stock" EntitySet="Clothing_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cosmetic_Clothing_Brand" Association="DemoShopModel.Store.FK_Cosmetic_Clothing_Brand">
+      <End Role="Clothing_Brand" EntitySet="Clothing_Brand" />
+      <End Role="Cosmetic" EntitySet="Cosmetic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cosmetic_Cosmetic_Category" Association="DemoShopModel.Store.FK_Cosmetic_Cosmetic_Category">
+      <End Role="Cosmetic_Category" EntitySet="Cosmetic_Category" />
+      <End Role="Cosmetic" EntitySet="Cosmetic" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Clothing">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="nvarchar" MaxLength="100" />
-    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="BrandId" Type="int" Nullable="false" />
+    <Property Name="GenderId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clothing_Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Clothing_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Clothing_Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Clothing_Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Size" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="ClothingId" Type="int" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Cosmetic">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="BrandId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Cosmetic_Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Cosmetic_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Clothing_Clothing_Brand">
+    <End Role="Clothing_Brand" Type="DemoShopModel.Store.Clothing_Brand" Multiplicity="1" />
+    <End Role="Clothing" Type="DemoShopModel.Store.Clothing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clothing_Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clothing">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clothing_Clothing_Category">
+    <End Role="Clothing_Category" Type="DemoShopModel.Store.Clothing_Category" Multiplicity="1" />
+    <End Role="Clothing" Type="DemoShopModel.Store.Clothing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clothing_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clothing">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clothing_Clothing_Gender">
+    <End Role="Clothing_Gender" Type="DemoShopModel.Store.Clothing_Gender" Multiplicity="1" />
+    <End Role="Clothing" Type="DemoShopModel.Store.Clothing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clothing_Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clothing">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clothing_Stock_Clothing">
+    <End Role="Clothing" Type="DemoShopModel.Store.Clothing" Multiplicity="1" />
+    <End Role="Clothing_Stock" Type="DemoShopModel.Store.Clothing_Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clothing">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clothing_Stock">
+        <PropertyRef Name="ClothingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cosmetic_Clothing_Brand">
+    <End Role="Clothing_Brand" Type="DemoShopModel.Store.Clothing_Brand" Multiplicity="1" />
+    <End Role="Cosmetic" Type="DemoShopModel.Store.Cosmetic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clothing_Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cosmetic">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cosmetic_Cosmetic_Category">
+    <End Role="Cosmetic_Category" Type="DemoShopModel.Store.Cosmetic_Category" Multiplicity="1" />
+    <End Role="Cosmetic" Type="DemoShopModel.Store.Cosmetic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cosmetic_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cosmetic">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using ShopDomainServices;
 using ShopModelMapper;
+using ShopModels;
 
 namespace WebApplicationService
 {
@@ -18,7 +19,7 @@ namespace WebApplicationService
         }
 
         // GET /Clothing
-        public IEnumerable<ClothingModel> GetAllCosmetics()
+        public IEnumerable<ClothingModel> GetAllClothing()
         {
 
             return _clothingDomainService.GetAll().Cast<ClothingModel>().ToList();
@@ -37,7 +38,7 @@ namespace WebApplicationService
         }
 
         // PUT Clothing/5
-        public void Update(int id, ClothingModel model)
+        public void Update(ClothingModel model)
         {
             _clothingDomainService.Update(model);
         }

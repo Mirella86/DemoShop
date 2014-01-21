@@ -79,6 +79,10 @@
       <Project>{C720AA52-5724-4E2E-9CE7-80D6362DFBFC}</Project>
       <Name>ShopModelMapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShopModels\ShopModels.csproj">
+      <Project>{bccadf87-2d98-41c0-868f-e19b2dd02a8c}</Project>
+      <Name>ShopModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

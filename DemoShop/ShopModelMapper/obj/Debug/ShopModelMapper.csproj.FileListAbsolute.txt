@@ -9,3 +9,5 @@ D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.pdb
 D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.xml
 D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.dll
 D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.pdb
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.pdb

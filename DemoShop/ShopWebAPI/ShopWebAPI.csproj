@@ -311,6 +311,10 @@
       <Project>{c720aa52-5724-4e2e-9ce7-80d6362dfbfc}</Project>
       <Name>ShopModelMapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShopModels\ShopModels.csproj">
+      <Project>{BCCADF87-2D98-41C0-868F-E19B2DD02A8C}</Project>
+      <Name>ShopModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

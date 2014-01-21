@@ -4,9 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e7bb7d8784af4a798f934ff01c2cdfc5" Name="Diagram1">
-        <EntityTypeShape EntityType="DemoShopModel.Clothing" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoShopModel.Cosmetic" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="89b4104da85a4619a6d4b0b796021b02" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoShopModel.Clothing" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Clothing_Brand" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Clothing_Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Clothing_Gender" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Clothing_Stock" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Cosmetic" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Cosmetic_Brand" Width="1.5" PointX="7.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoShopModel.Cosmetic_Category" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="DemoShopModel.FK_Clothing_Clothing_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoShopModel.FK_Clothing_Clothing_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoShopModel.FK_Clothing_Clothing_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoShopModel.FK_Clothing_Stock_Clothing" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoShopModel.FK_Cosmetic_Clothing_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoShopModel.FK_Cosmetic_Cosmetic_Category" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

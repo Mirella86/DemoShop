@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
@@ -11,6 +6,7 @@ using DBEntities;
 using ShopDAL;
 using ShopDomainServices;
 using ShopModelMapper;
+using ShopModels;
 
 namespace ConsoleApp
 {
@@ -23,25 +19,11 @@ namespace ConsoleApp
 
             InitializeWindsor();
 
-            IClothingDomainService clothingDomainService = _container.Resolve<IClothingDomainService>();
-            IEnumerable<IModel> clothingModels = clothingDomainService.GetAll();
-            clothingDomainService.Insert(new ClothingModel { Name = "H&M pants", Size = "34" });
-            clothingDomainService.Delete(18);
-            foreach (var clothing in clothingModels)
-            {
-                Console.WriteLine("{0}: {1}", ((ClothingModel)clothing).Name, ((ClothingModel)clothing).Size);
-            }
+            var clothingDomainService = _container.Resolve<IClothingDomainService>();
+            var children=new string[]{"Clothing_Brand", "Clothing_Category", "Clothing_Gender", "Clothing_Stock"};
+            IModel model = clothingDomainService.GetWithChildren(3, children);
 
-            //      IDomainServiceBase<Clothing> clothingService = _container.Resolve<IDomainServiceBase<Clothing>>();
-            //        clothingService.Insert(new ClothingModel { Name = "Lee Cooper jeans blabla", Size = "34" });
-
-            //        IEnumerable<IModel> clothingModels = clothingService.GetAll();
-
-            //foreach (var clothing in clothingModels)
-            //{
-            //    Console.WriteLine("{0}: {1}", ((ClothingModel)clothing).Name, ((ClothingModel)clothing).Size);
-            //}
-            //Console.WriteLine();
+            Console.WriteLine();
 
 
         }

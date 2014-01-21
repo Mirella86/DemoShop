@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DBEntities;
-using ShopDAL;
-using ShopModelMapper;
+using ShopModels;
+
 
 namespace ShopDomainServices
 {
@@ -15,6 +11,7 @@ namespace ShopDomainServices
 
         IEnumerable<IModel> GetAll();
         IModel Get(int id);
+        IModel GetWithChildren(int id, string[] children);
         void Insert(IModel entity);
         void Delete(int entity);
         void Update(IModel entity);

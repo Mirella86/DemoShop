@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DBEntities;
-using ShopDAL;
+﻿using DBEntities;
+using ShopModels;
 
 namespace ShopModelMapper
 {
@@ -12,5 +7,6 @@ namespace ShopModelMapper
     {
         IModel GetModelFromEntity(TEntity entity);
         TEntity GetEntityFromModel(IModel model);
+        TEntity GetEntityFromModelKey(int key);
     }
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DBEntities;
-using ShopDAL;
+﻿using DBEntities;
+using ShopModels;
+
 
 namespace ShopModelMapper
 {
@@ -19,17 +15,33 @@ namespace ShopModelMapper
             return new CosmeticModel
             {
                 Id = entity.Id,
-                Name = entity.Name
+                Name = entity.Name,
+                Stock = entity.Stock,
+                BrandId = entity.BrandId,
+                BrandName = entity.Clothing_Brand == null ? "" : entity.Clothing_Brand.Name,
+                CategoryId = entity.CategoryId,
+                CategoryName = entity.Cosmetic_Category == null ? "" : entity.Cosmetic_Category.Name,
+
+
             };
         }
 
         public Cosmetic GetEntityFromModel(IModel model)
         {
-            var cosmeticModel = (CosmeticModel) model;
+            var cosmeticModel = (CosmeticModel)model;
             return new Cosmetic
             {
                 Id = cosmeticModel.Id,
                 Name = cosmeticModel.Name
+            };
+        }
+
+        public Cosmetic GetEntityFromModelKey(int id)
+        {
+            return new Cosmetic
+            {
+                Id = id,
+                Name = ""
             };
         }
     }

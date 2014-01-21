@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using ShopDomainServices;
 using ShopModelMapper;
+using ShopModels;
 
 namespace WebApplicationService.Controllers
 {

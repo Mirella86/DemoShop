@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DBEntities;
-using ShopDAL;
+using ShopModels;
+
 
 namespace ShopModelMapper
 {
@@ -12,11 +10,21 @@ namespace ShopModelMapper
     {
         public IModel GetModelFromEntity(Clothing entity)
         {
+
+            IEnumerable<StockModel> stocks = entity.Clothing_Stock.Select(i => new StockModel { Size = i.Size, Stock = i.Stock }).Distinct().ToList();
+
             return new ClothingModel
             {
                 Id = entity.Id,
                 Name = entity.Name,
-                Size = entity.Size
+                BrandId = entity.BrandId,
+                BrandName = entity.Clothing_Brand == null ? "" : entity.Clothing_Brand.Name,
+                GenderId = entity.GenderId,
+                GenderName = entity.Clothing_Gender == null ? "" : entity.Clothing_Gender.Name,
+                CategoryId = entity.CategoryId,
+                CategoryName = entity.Clothing_Category == null ? "" : entity.Clothing_Category.Name,
+                Stocks = stocks
+
             };
         }
 
@@ -27,7 +35,16 @@ namespace ShopModelMapper
             {
                 Id = clothingModel.Id,
                 Name = clothingModel.Name,
-                Size = clothingModel.Size
+
+            };
+        }
+
+        public Clothing GetEntityFromModelKey(int id)
+        {
+            return new Clothing
+            {
+                Id = id,
+                Name = ""
 
             };
         }

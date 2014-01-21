@@ -8,20 +8,19 @@ $(document).ready(function () {
         self.ID = ko.observable(id);
         self.Name = ko.observable(name);
         self.Size = ko.observable(size);
+        self.validObject = ko.computed(function () {
+            if (self.Name() != "" && self.Size() != "")
+                return true;
+            else return false;
 
+        });
     }
 
     // Overall viewmodel for this screen, along with initial state
     function ClothingViewModel() {
         var self = this;
 
-        // Editable data
         self.clothings = ko.observableArray([]);
-        //$.getJSON('Clothing', function (data) {
-        //    $.each(data, function (i, val) {
-        //        self.clothings.push(new Clothing(val.Id, val.Name, val.Size, self));
-        //    });
-        //});
 
         self.getClothings = function () {
             $.ajax({
@@ -29,25 +28,36 @@ $(document).ready(function () {
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
-                    self.clothings(data);
-                    alert('succes');
+
+                    $.each(data, function(index, value) {
+                        self.clothings.push(new Clothing(value.Id, value.Name, value.Size));
+                    });
                 },
                 error: function () {
-                    alert("error");
+                    alert("Error gettin data from server");
                 }
             });
         };
 
+        self.validObjects = ko.computed(function() {
+            $.each(self.clothings, function(index, value) {
+                if (!value.validObject)
+                    return false;
+                return true;
+            });
+        });
 
-        //self.ValidObject = ko.computed(function () {
-        //    $.each(self.clothings, function (index, value) {
-        //        if (value.Name.length == 0 || value.Size.length == 0)
-        //            return false;
-        //    });
-        //    return true;
-        //});
+        self.updateClothing = function () {
+            var model = new ClothingModel();
+            model.Id = self.Id();
+            model.Name = self.Name();
+            model.Size = self.Size();
 
-        self.updateAll = function() {};
+            $.ajax({
+                url: 'http://localhost/ShopWebAPI/Clothing/',
+                type: 'POST',
+        });
+        };
 
         self.addClothing = function () {
             self.clothings.push(new Clothing("", "", ""));

@@ -8,7 +8,7 @@ using DBEntities;
 
 namespace ShopDAL
 {
-    public interface ICosmeticRepository:IRepository<Cosmetic>
+    public interface ICosmeticRepository : IRepository<Cosmetic>
     {
     }
 }

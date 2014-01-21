@@ -1,0 +1,5 @@
+D:\Git\DemoShop\DemoShop\ShopModels\bin\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopModels\bin\Debug\ShopModels.pdb
+D:\Git\DemoShop\DemoShop\ShopModels\obj\Debug\ShopModels.csprojResolveAssemblyReference.cache
+D:\Git\DemoShop\DemoShop\ShopModels\obj\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopModels\obj\Debug\ShopModels.pdb

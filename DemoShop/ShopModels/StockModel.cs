@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopModelMapper
+namespace ShopModels
 {
-    public class ClothingModel : IModel
+    public class StockModel : IModel
     {
-        public string Name { get; set; }
         public string Size { get; set; }
+        public int Stock { get; set; }
     }
 }
