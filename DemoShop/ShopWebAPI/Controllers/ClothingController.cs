@@ -21,7 +21,6 @@ namespace WebApplicationService
         // GET /Clothing
         public IEnumerable<ClothingModel> GetAllClothing()
         {
-
             return _clothingDomainService.GetAll().Cast<ClothingModel>().ToList();
         }
         // GET /Clothing/id
