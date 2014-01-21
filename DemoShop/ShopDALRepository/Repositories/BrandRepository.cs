@@ -13,8 +13,8 @@ namespace ShopDALRepository.Repositories
 	{
 		#region Ctors
 
-		public BrandRepository(ShopContext context)
-			: base(context)
+		public BrandRepository(string connectionString)
+            : base(connectionString)
 		{
 
 		}

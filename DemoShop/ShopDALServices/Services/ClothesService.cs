@@ -12,6 +12,7 @@ namespace ShopDALServices.Services
 	public class ClothesService : Service<Clothes>
 	{
 		public ClothesService(IRepository<Clothes> baseRepository, IUnitOfWork unitOfWork) : base(baseRepository, unitOfWork) { }
-		
+        public ClothesService(IRepository<Clothes> baseRepository) : base(baseRepository) { }
+      
 	}
 }

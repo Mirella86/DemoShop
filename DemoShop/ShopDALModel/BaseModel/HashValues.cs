@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopDAL.Model
+namespace ShopDAL.BaseModel
 {
-	public abstract class HashValues
+	public abstract class HashValues : IHashValues
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }

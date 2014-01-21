@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopDAL.Model
+namespace ShopDAL.BaseModel
 {
     using System;
     using System.Collections.Generic;
-    
-    public abstract class Product
+	
+    public abstract class Product : IProductModel
     {
         public int Id { get; set; }
         public int SizeId { get; set; }

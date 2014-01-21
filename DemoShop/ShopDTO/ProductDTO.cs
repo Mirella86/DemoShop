@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ShopDTO
 {
-	public class ProductDTO
+	public abstract class ProductDTO
 	{
 		public int Id { get; set; }
 		public int SizeId { get; set; }

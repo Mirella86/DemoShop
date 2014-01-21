@@ -12,6 +12,7 @@ namespace ShopDAL.Model
     using System;
     using System.Collections.Generic;
 	using System.ComponentModel.DataAnnotations.Schema;
+	using ShopDAL.BaseModel;
     
     public partial class Colour : HashValues
     {

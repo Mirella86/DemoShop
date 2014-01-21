@@ -16,11 +16,25 @@ namespace ShopDAL.Repository
 		protected ShopContext context;
 		protected DbSet<TEntity> dbSet;
 
-		public Repository(ShopContext context)
+		public Repository(string connectionString)
 		{
-			this.context = context;
+            if (context == null)
+            {
+                context = new ShopContext(connectionString);
+            }
+			
 			this.dbSet = context.Set<TEntity>();
 		}
+        public Repository(ShopContext context)
+        {
+            this.context = context;
+            this.dbSet = context.Set<TEntity>();
+        }
+
+        public object CurrentContext
+        {
+            get { return (object)this.context; }
+        }
 
 		public IQueryable<TEntity> Entities
 		{

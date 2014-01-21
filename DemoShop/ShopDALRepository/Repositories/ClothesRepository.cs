@@ -13,10 +13,14 @@ namespace ShopDALRepository.Repositories
 	{
 		#region Ctors
 
-		public ClothesRepository(ShopContext context)
-			: base(context)
+		public ClothesRepository(string connectionString)
+			: base(connectionString)
 		{
 		}
+        public ClothesRepository(ShopContext context)
+            : base(context)
+        {
+        }
 		public string GetName(object id)
 		{
 			Clothes entity = base.GetById(id);

@@ -16,10 +16,13 @@ namespace ShopDAL.Model
     
     public partial class ShopContext : DbContext
     {
-		public ShopContext()
-        {
-        }
+		protected string connectionString = "name=ShopContext";
 
+		public ShopContext(string connectionString) : base(connectionString)
+		{
+            this.Configuration.LazyLoadingEnabled = true;
+		}
+		
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using ShopDALRepository.Interfaces;
+using ShopDAL.Repository;
+using ShopDAL.Model;
 
 namespace ShopDALServices.Interfaces
 {
@@ -23,7 +25,15 @@ namespace ShopDALServices.Interfaces
 			_baseRepository = baseRepository;
 			_unitOfWork = unitOfWork;
 		}
-		
+        public Service(IRepository<T> baseRepository)
+        {
+            if (baseRepository == null)
+                throw new ArgumentNullException("baseRepository");
+                       
+            _baseRepository = baseRepository;
+            if (_unitOfWork == null && _baseRepository.CurrentContext is ShopContext)                
+                _unitOfWork = new UnitOfWork(_baseRepository.CurrentContext as ShopContext);
+        }
 		public IQueryable<T> Entities
 		{
 			get { return this._baseRepository.Entities; }
@@ -47,25 +57,29 @@ namespace ShopDALServices.Interfaces
 		public void Insert(T entity)
 		{
 			this._baseRepository.Insert(entity);
-			_unitOfWork.Commit();
+            if (_unitOfWork != null)
+			    _unitOfWork.Commit();
 		}
 
 		public void Delete(object id)
 		{
 			this._baseRepository.Delete(id);
-			_unitOfWork.Commit();
+            if (_unitOfWork != null)
+			    _unitOfWork.Commit();
 		}
 
 		public void Delete(T entity)
 		{
 			this._baseRepository.Delete(entity);
-			_unitOfWork.Commit();
+            if (_unitOfWork != null)
+                _unitOfWork.Commit();
 		}
 
 		public void Update(T entity)
 		{
 			this._baseRepository.Update(entity);
-			_unitOfWork.Commit();
+            if (_unitOfWork != null)
+                _unitOfWork.Commit();
 		}
 	}
 }

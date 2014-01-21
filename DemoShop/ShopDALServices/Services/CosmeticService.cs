@@ -12,5 +12,7 @@ namespace ShopDALServices.Services
 	public class CosmeticService : Service<Cosmetic>
 	{
 		public CosmeticService(IRepository<Cosmetic> baseRepository, IUnitOfWork unitOfWork) : base(baseRepository, unitOfWork) { }
+        public CosmeticService(IRepository<Cosmetic> baseRepository) : base(baseRepository) { }
+      
 	}
 }
