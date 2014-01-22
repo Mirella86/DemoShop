@@ -20,7 +20,7 @@ namespace DBEntities
         public int CategoryId { get; set; }
         public int Stock { get; set; }
     
-        public virtual Clothing_Brand Clothing_Brand { get; set; }
         public virtual Cosmetic_Category Cosmetic_Category { get; set; }
+        public virtual Cosmetic_Brand Cosmetic_Brand { get; set; }
     }
 }

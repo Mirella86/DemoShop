@@ -14,6 +14,12 @@ namespace WebApplicationService.Controllers
     {
         private ICosmeticDomainService _cosmeticDomainService;
         // GET /cosmetic
+
+        public CosmeticController()
+        {
+            _cosmeticDomainService = WindsorResolver.Instance.CosmeticDomainService;
+        }
+
         public IEnumerable<CosmeticModel> GetAll()
         {
             return _cosmeticDomainService.GetAll().Cast<CosmeticModel>().ToList();

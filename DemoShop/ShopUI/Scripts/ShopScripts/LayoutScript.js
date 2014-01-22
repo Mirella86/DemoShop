@@ -2,8 +2,8 @@
 
     function ProductType(id, name) {
         var self = this;
-        self.Id = id;
-        self.Name = name;
+        self.Id = ko.observable(id);
+        self.Name = ko.observable(name);
     }
 
     function ProductViewModel() {
@@ -31,13 +31,19 @@
         };
 
 
-        self.goToProduct = function (product) {
-            self.chosenProductId(product);
-        };
-    }
+    //    self.goToProduct = function (product) {
+    //        self.chosenProductId(product);
+
+    //        switch (product.Id) {
+    //        case 1:
+    //            self.
+    //        default:
+    //        }
+    //    };
+    //}
 
     var productViewModel = new ProductViewModel();
     productViewModel.getProductTypes();
-    ko.applyBindings(new ProductViewModel());
+    ko.applyBindings(productViewModel);
 
 });

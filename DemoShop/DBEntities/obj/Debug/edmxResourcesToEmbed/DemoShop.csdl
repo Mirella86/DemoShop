@@ -33,6 +33,10 @@
       <End Role="Cosmetic_Category" EntitySet="Cosmetic_Category" />
       <End Role="Cosmetic" EntitySet="Cosmetics" />
     </AssociationSet>
+    <AssociationSet Name="FK_Cosmetic_Cosmetic_Brand" Association="DemoShopModel.FK_Cosmetic_Cosmetic_Brand">
+      <End Role="Cosmetic_Brand" EntitySet="Cosmetic_Brand" />
+      <End Role="Cosmetic" EntitySet="Cosmetics" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Clothing">
     <Key>
@@ -92,8 +96,8 @@
     <Property Name="BrandId" Type="Int32" Nullable="false" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Clothing_Brand" Relationship="DemoShopModel.FK_Cosmetic_Clothing_Brand" FromRole="Cosmetic" ToRole="Clothing_Brand" />
     <NavigationProperty Name="Cosmetic_Category" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Category" FromRole="Cosmetic" ToRole="Cosmetic_Category" />
+    <NavigationProperty Name="Cosmetic_Brand" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic" ToRole="Cosmetic_Brand" />
   </EntityType>
   <EntityType Name="Cosmetic_Brand">
     <Key>
@@ -101,6 +105,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Cosmetics" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic_Brand" ToRole="Cosmetic" />
   </EntityType>
   <EntityType Name="Cosmetic_Category">
     <Key>
@@ -179,6 +184,18 @@
       </Principal>
       <Dependent Role="Cosmetic">
         <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cosmetic_Cosmetic_Brand">
+    <End Type="DemoShopModel.Cosmetic_Brand" Role="Cosmetic_Brand" Multiplicity="1" />
+    <End Type="DemoShopModel.Cosmetic" Role="Cosmetic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cosmetic_Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cosmetic">
+        <PropertyRef Name="BrandId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

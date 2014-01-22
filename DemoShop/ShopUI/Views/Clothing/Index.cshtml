@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<script src="~/Scripts/ShopScripts/ClothingScripts.js"></script>
+@*<script src="~/Scripts/ShopScripts/ClothingScripts.js"></script>*@
 <h2>Index</h2>
 
 <table>
@@ -15,21 +15,22 @@
     </thead>
 
     <h2>Clothing list</h2>
-    <tbody data-bind="foreach: clothings">
+    <tbody data-bind="foreach: products">
         <tr>
             <td data-bind="text: Name"></td>
             <td data-bind="text: Brand().Name"></td>
             <td  data-bind="text: Category().Name"></td>
-            <td  data-bind="text: Gender().Name" ></td>
+            <td  data-bind="text: Gender().Name, visible: Gender()!=null" ></td>
+@*            <td data-bind="text: Stock, enable: $root.chosenProductTypeId() == 2"></td>*@
             <td>
                 <button data-bind="click: $root.removeClothing">X</button></td>
             @*            <td><button data-bind="click: $root.updateClothing, enable: validObject()">Update</button></td>*@
         </tr>
     </tbody>
 </table>
-<button data-bind="click: addClothing, enable: clothings().length < 50">Add another clothing article</button>
+<button data-bind="click: addClothing, enable: products().length < 50">Add another clothing article</button>
 @*<button data-bind="click: updateAll, enable: validObjects()">Update all</button>*@
-<h3>Number of items:   <span data-bind="text: clothings().length" /></h3>
+<h3>Number of items:   <span data-bind="text: products().length" /></h3>
 
 
 

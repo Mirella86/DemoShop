@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DemoShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DemoShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="DemoShopModelStoreContainer">
           <EntitySet Name="Clothing" EntityType="DemoShopModel.Store.Clothing" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Clothing_Brand" EntityType="DemoShopModel.Store.Clothing_Brand" store:Type="Tables" Schema="dbo" />
@@ -30,8 +30,8 @@
             <End Role="Clothing" EntitySet="Clothing" />
             <End Role="Clothing_Stock" EntitySet="Clothing_Stock" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cosmetic_Clothing_Brand" Association="DemoShopModel.Store.FK_Cosmetic_Clothing_Brand">
-            <End Role="Clothing_Brand" EntitySet="Clothing_Brand" />
+          <AssociationSet Name="FK_Cosmetic_Cosmetic_Brand" Association="DemoShopModel.Store.FK_Cosmetic_Cosmetic_Brand">
+            <End Role="Cosmetic_Brand" EntitySet="Cosmetic_Brand" />
             <End Role="Cosmetic" EntitySet="Cosmetic" />
           </AssociationSet>
           <AssociationSet Name="FK_Cosmetic_Cosmetic_Category" Association="DemoShopModel.Store.FK_Cosmetic_Cosmetic_Category">
@@ -151,11 +151,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cosmetic_Clothing_Brand">
-          <End Role="Clothing_Brand" Type="DemoShopModel.Store.Clothing_Brand" Multiplicity="1" />
+        <Association Name="FK_Cosmetic_Cosmetic_Brand">
+          <End Role="Cosmetic_Brand" Type="DemoShopModel.Store.Cosmetic_Brand" Multiplicity="1" />
           <End Role="Cosmetic" Type="DemoShopModel.Store.Cosmetic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Clothing_Brand">
+            <Principal Role="Cosmetic_Brand">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Cosmetic">
@@ -175,8 +175,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DemoShopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -211,6 +210,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Cosmetic_Cosmetic_Category" Association="DemoShopModel.FK_Cosmetic_Cosmetic_Category">
             <End Role="Cosmetic_Category" EntitySet="Cosmetic_Category" />
+            <End Role="Cosmetic" EntitySet="Cosmetics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cosmetic_Cosmetic_Brand" Association="DemoShopModel.FK_Cosmetic_Cosmetic_Brand">
+            <End Role="Cosmetic_Brand" EntitySet="Cosmetic_Brand" />
             <End Role="Cosmetic" EntitySet="Cosmetics" />
           </AssociationSet>
         </EntityContainer>
@@ -272,8 +275,8 @@
           <Property Name="BrandId" Type="Int32" Nullable="false" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Clothing_Brand" Relationship="DemoShopModel.FK_Cosmetic_Clothing_Brand" FromRole="Cosmetic" ToRole="Clothing_Brand" />
           <NavigationProperty Name="Cosmetic_Category" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Category" FromRole="Cosmetic" ToRole="Cosmetic_Category" />
+          <NavigationProperty Name="Cosmetic_Brand" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic" ToRole="Cosmetic_Brand" />
         </EntityType>
         <EntityType Name="Cosmetic_Brand">
           <Key>
@@ -281,6 +284,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Cosmetics" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic_Brand" ToRole="Cosmetic" />
         </EntityType>
         <EntityType Name="Cosmetic_Category">
           <Key>
@@ -359,6 +363,18 @@
             </Principal>
             <Dependent Role="Cosmetic">
               <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cosmetic_Cosmetic_Brand">
+          <End Type="DemoShopModel.Cosmetic_Brand" Role="Cosmetic_Brand" Multiplicity="1" />
+          <End Type="DemoShopModel.Cosmetic" Role="Cosmetic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cosmetic_Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cosmetic">
+              <PropertyRef Name="BrandId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

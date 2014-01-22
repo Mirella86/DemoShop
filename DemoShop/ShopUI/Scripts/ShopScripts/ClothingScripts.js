@@ -20,41 +20,62 @@ $(document).ready(function () {
         self.Name = ko.observable(name);
     }
 
-    //class for Clothing object
-    function Clothing(id, name, gender, brand, category) {
+    function ProductType(id, name) {
+        var self = this;
+        self.Id = ko.observable(id);
+        self.Name = ko.observable(name);
+    }
+
+    //class for Product object
+    function Product(id, name, gender, brand, category, stock, stockList) {
         var self = this;
         self.ID = ko.observable(id);
         self.Name = ko.observable(name);
         self.Brand = ko.observable(brand);
         self.Category = ko.observable(category);
-        self.Gender = ko.observable(gender);
+       // if (gender != null)
+            self.Gender = ko.observable(gender);
 
-        //self.validObject = ko.computed(function () {
-        //    if (self.Name() != "" && self.Size() != "")
-        //        return true;
-        //    else return false;
-        //});
+        //    self.Stock = ko.observable(stock);
+        //     self.StockList = ko.observableArray([]);
+
+    }
+
+    function StockSize(size, stock) {
+        var self = this;
+        self.Size = size;
+        self.Stock = stock;
+    }
+
+    function StockList(stockList) {
+        $.each(stockList, function (index, value) {
+            var stockSize = new StockSize(value.Size, value.Stock);
+        });
     }
 
     // Overall viewmodel for this screen, along with initial state
-    function ClothingViewModel() {
+    function ViewModel() {
         var self = this;
 
-        self.clothings = ko.observableArray([]);
+        self.products = ko.observableArray([]);
+        self.productTypes = ko.observableArray([]);
+        self.chosenProductTypeId = ko.observable();
 
-        self.getClothings = function () {
+
+        self.getProductTypes = function () {
+
             $.ajax({
-                url: 'http://localhost/ShopWebAPI/Clothing/',
+                url: 'http://localhost/ShopWebAPI/ShopMain/',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
-
+                    self.productTypes.removeAll();
                     $.each(data, function (index, value) {
-                        var gender = new Gender(value.GenderId, value.GenderName);
-                        var category = new Category(value.CategoryId, value.CategoryName);
-                        var brand = new Brand(value.BrandId, value.BrandName);
-                        self.clothings.push(new Clothing(value.Id, value.Name, gender, brand, category));
+                        self.productTypes.push(new ProductType(value.Id, value.Name));
                     });
+
+                    self.getProducts();
+                    self.chosenProductTypeId = ko.observable(1);
                 },
                 error: function () {
                     alert("Error gettin data from server");
@@ -62,13 +83,64 @@ $(document).ready(function () {
             });
         };
 
-        //self.validObjects = ko.computed(function () {
-        //    $.each(self.clothings, function (index, value) {
-        //        if (!value.validObject)
-        //            return false;
-        //        return true;
-        //    });
-        //});
+        self.goToProduct = function (product) {
+            //       self.chosenProductTypeId = product;
+            if (product.Id() == 1)
+                self.chosenProductTypeId = ko.observable(1);
+
+            if (product.Id() == 2)
+                self.chosenProductTypeId = ko.observable(2);
+
+            self.getProducts();
+
+        };
+
+        self.getProducts = function () {
+
+            if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
+
+                $.ajax({
+                    url: 'http://localhost/ShopWebAPI/Clothing/',
+                    type: 'GET',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        self.products.removeAll();
+                        $.each(data, function (index, value) {
+                            var gender = new Gender(value.GenderId, value.GenderName);
+                            var category = new Category(value.CategoryId, value.CategoryName);
+                            var brand = new Brand(value.BrandId, value.BrandName);
+                            //      var stockList = new StockList(value.StockList);
+                            self.products.push(new Product(value.Id, value.Name, gender, brand, category, null, null));
+                        });
+                    },
+                    error: function () {
+                        alert("Error gettin data from server");
+                    }
+                });
+            } else {
+                if (self.chosenProductTypeId() == 2) {
+
+                    $.ajax({
+                        url: 'http://localhost/ShopWebAPI/Cosmetic/',
+                        type: 'GET',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            self.products.removeAll();
+                            $.each(data, function (index, value) {
+                                var category = new Category(value.CategoryId, value.CategoryName);
+                                var brand = new Brand(value.BrandId, value.BrandName);
+                                //       var stockList = new StockList(value.StockList);
+                                self.products.push(new Product(value.Id, value.Name, null, brand, category, null, null));
+                            });
+                        },
+                        error: function () {
+                            alert("Error gettin data from server");
+                        }
+                    });
+                };
+            }
+        };
+
 
         //self.updateClothing = function () {
         //    var model = new ClothingModel();
@@ -83,16 +155,17 @@ $(document).ready(function () {
         //};
 
         self.addClothing = function () {
-            self.clothings.push(new Clothing("", "", ""));
+            self.products.push(new Product("", "", ""));
 
         };
 
         self.removeClothing = function (clothing) {
-            self.clothings.remove(clothing);
+            self.products.remove(clothing);
         };
     }
 
-    var clothingViewModel = new ClothingViewModel();
-    clothingViewModel.getClothings();
-    ko.applyBindings(clothingViewModel);
+    var viewModel = new ViewModel();
+    viewModel.getProductTypes();
+
+    ko.applyBindings(viewModel);
 });

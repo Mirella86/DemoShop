@@ -9,11 +9,11 @@ namespace ShopDomainServices
     public interface IDomainService<TEntity>  where TEntity : Entity
     {
 
-        IEnumerable<IModel> GetAll();
-        IModel Get(int id);
-        IModel GetWithChildren(int id, string[] children);
-        void Insert(IModel entity);
+        IEnumerable<Model> GetAll();
+        Model Get(int id);
+        Model GetWithChildren(int id, string[] children);
+        void Insert(Model entity);
         void Delete(int entity);
-        void Update(IModel entity);
+        void Update(Model entity);
     }
 }

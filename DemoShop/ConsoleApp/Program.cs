@@ -21,7 +21,7 @@ namespace ConsoleApp
 
             var clothingDomainService = _container.Resolve<IClothingDomainService>();
             var children=new string[]{"Clothing_Brand", "Clothing_Category", "Clothing_Gender", "Clothing_Stock"};
-            IModel model = clothingDomainService.GetWithChildren(3, children);
+            Model model = clothingDomainService.GetWithChildren(3, children);
 
             Console.WriteLine();
 

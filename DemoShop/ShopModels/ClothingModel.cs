@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopModels
 {
-    public class ClothingModel : IModel
+    public class ClothingModel : Model
     {
         public string Name { get; set; }
 

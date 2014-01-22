@@ -8,7 +8,7 @@ namespace ShopModelMapper
 {
     public class ClothingMapper : IMapper<Clothing>
     {
-        public IModel GetModelFromEntity(Clothing entity)
+        public Model GetModelFromEntity(Clothing entity)
         {
 
             IEnumerable<StockModel> stocks = entity.Clothing_Stock.Select(i => new StockModel { Size = i.Size, Stock = i.Stock }).Distinct().ToList();
@@ -28,7 +28,7 @@ namespace ShopModelMapper
             };
         }
 
-        public Clothing GetEntityFromModel(IModel model)
+        public Clothing GetEntityFromModel(Model model)
         {
             var clothingModel = (ClothingModel)model;
             return new Clothing

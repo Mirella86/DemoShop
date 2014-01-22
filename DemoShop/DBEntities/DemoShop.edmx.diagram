@@ -19,6 +19,7 @@
         <AssociationConnector Association="DemoShopModel.FK_Clothing_Stock_Clothing" ManuallyRouted="false" />
         <AssociationConnector Association="DemoShopModel.FK_Cosmetic_Clothing_Brand" ManuallyRouted="false" />
         <AssociationConnector Association="DemoShopModel.FK_Cosmetic_Cosmetic_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

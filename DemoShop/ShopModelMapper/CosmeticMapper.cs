@@ -9,7 +9,7 @@ namespace ShopModelMapper
         public string Name { get; set; }
 
 
-        public IModel GetModelFromEntity(Cosmetic entity)
+        public Model GetModelFromEntity(Cosmetic entity)
         {
 
             return new CosmeticModel
@@ -18,7 +18,7 @@ namespace ShopModelMapper
                 Name = entity.Name,
                 Stock = entity.Stock,
                 BrandId = entity.BrandId,
-                BrandName = entity.Clothing_Brand == null ? "" : entity.Clothing_Brand.Name,
+                BrandName = entity.Cosmetic_Brand == null ? "" : entity.Cosmetic_Brand.Name,
                 CategoryId = entity.CategoryId,
                 CategoryName = entity.Cosmetic_Category == null ? "" : entity.Cosmetic_Category.Name,
 
@@ -26,7 +26,7 @@ namespace ShopModelMapper
             };
         }
 
-        public Cosmetic GetEntityFromModel(IModel model)
+        public Cosmetic GetEntityFromModel(Model model)
         {
             var cosmeticModel = (CosmeticModel)model;
             return new Cosmetic

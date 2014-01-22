@@ -25,8 +25,8 @@
       <End Role="Clothing" EntitySet="Clothing" />
       <End Role="Clothing_Stock" EntitySet="Clothing_Stock" />
     </AssociationSet>
-    <AssociationSet Name="FK_Cosmetic_Clothing_Brand" Association="DemoShopModel.Store.FK_Cosmetic_Clothing_Brand">
-      <End Role="Clothing_Brand" EntitySet="Clothing_Brand" />
+    <AssociationSet Name="FK_Cosmetic_Cosmetic_Brand" Association="DemoShopModel.Store.FK_Cosmetic_Cosmetic_Brand">
+      <End Role="Cosmetic_Brand" EntitySet="Cosmetic_Brand" />
       <End Role="Cosmetic" EntitySet="Cosmetic" />
     </AssociationSet>
     <AssociationSet Name="FK_Cosmetic_Cosmetic_Category" Association="DemoShopModel.Store.FK_Cosmetic_Cosmetic_Category">
@@ -146,11 +146,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Cosmetic_Clothing_Brand">
-    <End Role="Clothing_Brand" Type="DemoShopModel.Store.Clothing_Brand" Multiplicity="1" />
+  <Association Name="FK_Cosmetic_Cosmetic_Brand">
+    <End Role="Cosmetic_Brand" Type="DemoShopModel.Store.Cosmetic_Brand" Multiplicity="1" />
     <End Role="Cosmetic" Type="DemoShopModel.Store.Cosmetic" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Clothing_Brand">
+      <Principal Role="Cosmetic_Brand">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Cosmetic">

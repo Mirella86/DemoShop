@@ -21,7 +21,7 @@ namespace ShopDomainServices
             _mapper = mapper;
         }
 
-        public IEnumerable<IModel> GetAll()
+        public IEnumerable<Model> GetAll()
         {
             IEnumerable<TEntity> modelsList = _repository.GetAll();
             foreach (var entity in modelsList)
@@ -30,17 +30,17 @@ namespace ShopDomainServices
             }
         }
 
-        public IModel Get(int id)
+        public Model Get(int id)
         {
             return _mapper.GetModelFromEntity(_repository.Get(id));
         }
 
-        public IModel GetWithChildren(int id, string[] children)
+        public Model GetWithChildren(int id, string[] children)
         {
             return _mapper.GetModelFromEntity(_repository.GetWithChildren(_mapper.GetEntityFromModelKey(id), children));
         }
 
-        public void Insert(IModel model)
+        public void Insert(Model model)
         {
             _repository.Insert(_mapper.GetEntityFromModel(model));
         }
@@ -50,7 +50,7 @@ namespace ShopDomainServices
             _repository.Delete(id);
         }
 
-        public void Update(IModel model)
+        public void Update(Model model)
         {
             _repository.Update(_mapper.GetEntityFromModel(model));
         }

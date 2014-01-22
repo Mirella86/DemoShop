@@ -5,8 +5,8 @@ namespace ShopModelMapper
 {
     public interface IMapper<TEntity> where TEntity: Entity
     {
-        IModel GetModelFromEntity(TEntity entity);
-        TEntity GetEntityFromModel(IModel model);
+        Model GetModelFromEntity(TEntity entity);
+        TEntity GetEntityFromModel(Model model);
         TEntity GetEntityFromModelKey(int key);
     }
 }
