@@ -134,12 +134,12 @@ $(document).ready(function () {
         self.initializeDropDowns = function () {
 
             self.getAvailableBrands();
-   //         self.getAvailableGenders();
+            self.getAvailableGenders();
             self.getAvailableCategories();
         };
 
         self.getAvailableBrands = function () {
-            var urlGet = 'http://localhost/WebApi/api/Brands/GetBrands?productType=' + self.chosenProductTypeId();
+            var urlGet = 'http://localhost/WebApi/api/Constants/GetBrands?productType=' + self.chosenProductTypeId();
 
             $.ajax({
                 url: urlGet,
@@ -179,7 +179,7 @@ $(document).ready(function () {
         self.getAvailableGenders = function () {
 
             $.ajax({
-                url: 'http://localhost/WebApi/api/Gender',
+                url: 'http://localhost/WebApi/api/Constants/GetGenders',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
@@ -230,7 +230,7 @@ $(document).ready(function () {
                 if (self.chosenProductTypeId() == 2) {
 
                     $.ajax({
-                        url: 'http://localhost/ShopWebAPI/Cosmetic/',
+                        url: 'http://localhost/WebApi/api/Cosmetic/',
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {
@@ -276,7 +276,7 @@ $(document).ready(function () {
                 if (self.chosenProductTypeId() == 2) {
 
                     $.ajax({
-                        url: 'http://localhost/ShopWebAPI/Cosmetic/',
+                        url: 'http://localhost/WebApi/api/Cosmetic/',
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {

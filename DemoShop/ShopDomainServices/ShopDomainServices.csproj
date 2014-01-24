@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ClothingCategoryDomainService.cs" />
     <Compile Include="Classes\ClothingDomainService.cs" />
     <Compile Include="Classes\CosmeticBrandDomainService.cs" />
     <Compile Include="Classes\CosmeticDomainService.cs" />
     <Compile Include="Classes\DomainService.cs" />
     <Compile Include="Classes\ClothingBrandDomainService.cs" />
+    <Compile Include="Interfaces\IClothingCategoryDomainService.cs" />
     <Compile Include="Interfaces\ICosmeticBrandDomainService.cs" />
     <Compile Include="Interfaces\IClothingBrandDomainService.cs" />
     <Compile Include="Interfaces\IClothingDomainService.cs" />

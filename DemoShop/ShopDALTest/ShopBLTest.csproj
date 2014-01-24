@@ -101,10 +101,6 @@
       <Project>{18590277-27cf-4362-9bf6-16d7076599bb}</Project>
       <Name>ShopUI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShopWebAPI\ShopWebAPI.csproj">
-      <Project>{0d1fb91b-39eb-43c5-a878-f4619c339e47}</Project>
-      <Name>ShopWebAPI</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

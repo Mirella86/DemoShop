@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopDomainServices", "ShopDomainServices\ShopDomainServices.csproj", "{213BDCB0-D568-4B64-9FC7-75A280C836FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopWebAPI", "ShopWebAPI\ShopWebAPI.csproj", "{0D1FB91B-39EB-43C5-A878-F4619C339E47}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopModelMapper", "ShopModelMapper\ShopModelMapper.csproj", "{C720AA52-5724-4E2E-9CE7-80D6362DFBFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBEntities", "DBEntities\DBEntities.csproj", "{9E1F699E-7AE4-4E6A-BC60-33438CA20842}"
@@ -39,10 +37,6 @@ Global
 		{213BDCB0-D568-4B64-9FC7-75A280C836FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{213BDCB0-D568-4B64-9FC7-75A280C836FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{213BDCB0-D568-4B64-9FC7-75A280C836FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D1FB91B-39EB-43C5-A878-F4619C339E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D1FB91B-39EB-43C5-A878-F4619C339E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D1FB91B-39EB-43C5-A878-F4619C339E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D1FB91B-39EB-43C5-A878-F4619C339E47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C720AA52-5724-4E2E-9CE7-80D6362DFBFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C720AA52-5724-4E2E-9CE7-80D6362DFBFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C720AA52-5724-4E2E-9CE7-80D6362DFBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU

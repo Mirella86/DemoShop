@@ -74,7 +74,6 @@ D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopDomainServices.dll
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopModelMapper.dll
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopModels.dll
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopUI.dll
-D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\WebApplicationService.dll
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\EntityFramework.dll
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\System.Web.Optimization.dll
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\System.Web.Http.dll
@@ -96,7 +95,6 @@ D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopDomainServices.pdb
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopModelMapper.pdb
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopModels.pdb
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\ShopUI.pdb
-D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\WebApplicationService.pdb
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\Autofac.xml
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\Git\DemoShop\DemoShop\ShopDALTest\bin\Debug\Microsoft.Practices.ServiceLocation.xml
