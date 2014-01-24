@@ -33,8 +33,7 @@ $(document).ready(function () {
         self.Size = ko.observable(size);
         self.Stock = ko.observable(stock);
 
-        self.saveStock=function()
-        {
+        self.saveStock = function () {
         };
     }
 
@@ -54,12 +53,12 @@ $(document).ready(function () {
         self.Stock = ko.observable(stock);
         self.StockList = ko.observableArray([]);
         if (stockList != undefined) {
-            $.each(stockList, function(index, value) {
+            $.each(stockList, function (index, value) {
                 self.StockList.push(new Stock(value.Id, value.ClothingId, value.Size, value.Stock));
             });
         }
 
-        self.addStock = function() {
+        self.addStock = function () {
             self.StockList.push(new Stock("", self.ID, "", 0));
         };
 
@@ -75,7 +74,7 @@ $(document).ready(function () {
             self.areFieldsEditable(false);
 
             $.ajax({
-                url: 'http://localhost/ShopWebAPI/Clothing/',
+                url: 'http://localhost/WebApi/api/Clothing/',
                 type: 'POST',
                 contentType: 'application/json; charset=utf-8',
                 data: ko.toJSON(product),
@@ -108,7 +107,7 @@ $(document).ready(function () {
         self.getProductTypes = function () {
 
             $.ajax({
-                url: 'http://localhost/ShopWebAPI/ShopMain/',
+                url: 'http://localhost/WebApi/api/ShopMain/',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
@@ -135,25 +134,25 @@ $(document).ready(function () {
         self.initializeDropDowns = function () {
 
             self.getAvailableBrands();
-            self.getAvailableGenders();
+   //         self.getAvailableGenders();
             self.getAvailableCategories();
         };
 
         self.getAvailableBrands = function () {
+            var urlGet = 'http://localhost/WebApi/api/Brands/GetBrands?productType=' + self.chosenProductTypeId();
 
             $.ajax({
-                url: 'http://localhost/ShopWebAPI/Brands/',
+                url: urlGet,
                 type: 'GET',
-                contentType: 'application/json; charset=utf-8',
+                //     data: ko.toJSON(self.chosenProductTypeId()),
+                data: JSON.stringify(1),
+                contentType: 'application/json;',
                 success: function (data) {
                     $.each(data, function (index, value) {
                         self.availableBrands.push(new Brand(value.Id, value.Name));
                     });
-
-
                 },
                 error: function () {
-                    alert("Error gettin brandsr");
                 }
             });
         };
@@ -161,7 +160,7 @@ $(document).ready(function () {
         self.getAvailableCategories = function () {
 
             $.ajax({
-                url: 'http://localhost/ShopWebAPI/Categories/',
+                url: 'http://localhost/WebApi/api/Categories/',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
@@ -180,7 +179,7 @@ $(document).ready(function () {
         self.getAvailableGenders = function () {
 
             $.ajax({
-                url: 'http://localhost/ShopWebAPI/Gender',
+                url: 'http://localhost/WebApi/api/Gender',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
@@ -207,22 +206,20 @@ $(document).ready(function () {
         };
 
         self.getProducts = function () {
+            if (self.chosenProductTypeId() == undefined)
+                self.chosenProductTypeId(1);
 
-            if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
+            if (self.chosenProductTypeId() == 1)  {
 
                 $.ajax({
-                    url: 'http://localhost/ShopWebAPI/Clothing/',
+                    url: 'http://localhost/WebApi/api/Clothing/',
                     type: 'GET',
                     contentType: 'application/json; charset=utf-8',
                     success: function (data) {
                         self.products.removeAll();
                         $.each(data, function (index, value) {
-                            var gender = new Gender(value.GenderId, value.GenderName);
-                            //var stockList;
-                            //$.each(value.StockList, function (i, val) {
-                            //    stockList.push(new Stock(value.Size, value.Stock));
-                            //});
                             self.products.push(new Product(value.Id, value.Name, value.GenderId, value.GenderName, value.BrandId, value.BrandName, value.CategoryId, value.CategoryName, "", value.Stocks, false));
+                       
                         });
                     },
                     error: function () {
@@ -248,6 +245,8 @@ $(document).ready(function () {
                     });
                 };
             }
+
+            self.initializeDropDowns(self.chosenProductTypeId());
         };
 
 
@@ -261,12 +260,12 @@ $(document).ready(function () {
 
             if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
 
-                var url = 'http://localhost/ShopWebAPI/Clothing/' + product.ID();
+                var url = 'http://localhost/WebApi/api/Clothing/' + product.ID();
                 $.ajax({
                     url: url,
                     type: 'DELETE',
                     contentType: 'application/json; charset=utf-8',
-                    success: function (data) {
+                    success: function () {
                         alert("delete succesful");
                     },
                     error: function () {
@@ -277,7 +276,7 @@ $(document).ready(function () {
                 if (self.chosenProductTypeId() == 2) {
 
                     $.ajax({
-                        url: 'http://localhost/ShopWebAPI/Cosmetic/rry',
+                        url: 'http://localhost/ShopWebAPI/Cosmetic/',
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {

@@ -1,18 +1,3 @@
-D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.csprojResolveAssemblyReference.cache
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.pdb
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\DBEntities.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDAL.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\DBEntities.pdb
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDAL.pdb
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.pdb
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.xml
-D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.pdb
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModels.dll
-D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModels.pdb
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.pdb
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\bin\Debug\DBEntities.dll
@@ -28,3 +13,18 @@ D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\bin
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.csprojResolveAssemblyReference.cache
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDomainServices.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\DBEntities.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDAL.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\DBEntities.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModelMapper.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\ShopModels.pdb
+D:\Git\DemoShop\DemoShop\ShopDomainServices\bin\Debug\EntityFramework.xml
+D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.csprojResolveAssemblyReference.cache
+D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.dll
+D:\Git\DemoShop\DemoShop\ShopDomainServices\obj\Debug\ShopDomainServices.pdb

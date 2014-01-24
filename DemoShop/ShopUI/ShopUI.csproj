@@ -52,6 +52,12 @@
     <Reference Include="AutofacContrib.CommonServiceLocator">
       <HintPath>..\packages\Autofac.CommonServiceLocator.Indy.2.6.3.863\lib\net40\AutofacContrib.CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -210,6 +216,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindsorResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -331,6 +338,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBEntities\DBEntities.csproj">
+      <Project>{9e1f699e-7ae4-4e6a-bc60-33438ca20842}</Project>
+      <Name>DBEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopDAL\ShopDAL.csproj">
+      <Project>{5210ecb3-fc8b-4b29-9f7f-0108d6701196}</Project>
+      <Name>ShopDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopDomainServices\ShopDomainServices.csproj">
+      <Project>{213BDCB0-D568-4B64-9FC7-75A280C836FB}</Project>
+      <Name>ShopDomainServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopModelMapper\ShopModelMapper.csproj">
+      <Project>{c720aa52-5724-4e2e-9ce7-80d6362dfbfc}</Project>
+      <Name>ShopModelMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopModels\ShopModels.csproj">
+      <Project>{BCCADF87-2D98-41C0-868F-E19B2DD02A8C}</Project>
+      <Name>ShopModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

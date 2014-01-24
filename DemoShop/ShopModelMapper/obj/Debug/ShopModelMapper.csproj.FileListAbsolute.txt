@@ -1,16 +1,3 @@
-D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.csprojResolveAssemblyReference.cache
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.dll
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.pdb
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.dll
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.dll
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.dll
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.pdb
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.pdb
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.xml
-D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.dll
-D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.pdb
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.dll
-D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.pdb
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.pdb
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.dll
@@ -24,3 +11,16 @@ D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\De
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.csprojResolveAssemblyReference.cache
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.pdb
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.pdb
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.pdb
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.pdb
+D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.xml
+D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.csprojResolveAssemblyReference.cache
+D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.dll
+D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.pdb

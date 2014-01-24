@@ -1,15 +1,3 @@
-D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.csprojResolveAssemblyReference.cache
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll.config
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.pdb
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\Castle.Core.dll
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\DBEntities.dll
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\EntityFramework.dll
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\DBEntities.pdb
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\Castle.Core.xml
-D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\EntityFramework.xml
-D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.dll
-D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.pdb
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll.config
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.pdb
@@ -22,3 +10,15 @@ D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\bin\Debug\Enti
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.csprojResolveAssemblyReference.cache
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll.config
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.dll
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\ShopDAL.pdb
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\Castle.Core.dll
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\DBEntities.dll
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\DBEntities.pdb
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\Castle.Core.xml
+D:\Git\DemoShop\DemoShop\ShopDAL\bin\Debug\EntityFramework.xml
+D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.csprojResolveAssemblyReference.cache
+D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.dll
+D:\Git\DemoShop\DemoShop\ShopDAL\obj\Debug\ShopDAL.pdb

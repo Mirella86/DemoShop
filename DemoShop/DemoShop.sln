@@ -19,40 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopModels", "ShopModels\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopBLTest", "ShopDALTest\ShopBLTest.csproj", "{E34F9A69-E91C-4C1F-B33B-D0D3ABCEC66F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 10
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://10.188.37.20:8080/tfs/internaltrainning
-		SccProjectUniqueName0 = ShopDAL\\ShopDAL.csproj
-		SccProjectName0 = ShopDAL
-		SccLocalPath0 = ShopDAL
-		SccLocalPath1 = .
-		SccProjectUniqueName2 = ShopDALTest\\ShopBLTest.csproj
-		SccProjectName2 = ShopDALTest
-		SccLocalPath2 = ShopDALTest
-		SccProjectUniqueName3 = ConsoleApp\\ConsoleApp.csproj
-		SccProjectName3 = ConsoleApp
-		SccLocalPath3 = ConsoleApp
-		SccProjectUniqueName4 = ShopDomainServices\\ShopDomainServices.csproj
-		SccProjectName4 = ShopDomainServices
-		SccLocalPath4 = ShopDomainServices
-		SccProjectUniqueName5 = ShopModelMapper\\ShopModelMapper.csproj
-		SccProjectName5 = ShopModelMapper
-		SccLocalPath5 = ShopModelMapper
-		SccProjectUniqueName6 = DBEntities\\DBEntities.csproj
-		SccProjectName6 = DBEntities
-		SccLocalPath6 = DBEntities
-		SccProjectUniqueName7 = ShopWebAPI\\ShopWebAPI.csproj
-		SccProjectName7 = ShopWebAPI
-		SccLocalPath7 = ShopWebAPI
-		SccProjectUniqueName8 = ShopUI\\ShopUI.csproj
-		SccProjectName8 = ShopUI
-		SccLocalPath8 = ShopUI
-		SccProjectUniqueName9 = ShopModels\\ShopModels.csproj
-		SccProjectName9 = ShopModels
-		SccLocalPath9 = ShopModels
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -94,6 +63,10 @@ Global
 		{E34F9A69-E91C-4C1F-B33B-D0D3ABCEC66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E34F9A69-E91C-4C1F-B33B-D0D3ABCEC66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E34F9A69-E91C-4C1F-B33B-D0D3ABCEC66F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

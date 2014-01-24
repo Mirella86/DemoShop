@@ -14,25 +14,32 @@ namespace WebApplicationService
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapHttpRoute(
-            name: "ApiById",
-            routeTemplate: "{controller}/{id}",
-            defaults: new { id = RouteParameter.Optional },
-            constraints: new { id = @"^[0-9]+$" }
-        );
+            //  routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
 
-            routes.MapHttpRoute(
-                name: "ApiByName",
-                routeTemplate: "{controller}/{action}/{name}",
-                defaults: null,
-                constraints: new { name = @"^[a-z]+$" }
-            );
+            //    routes.MapHttpRoute(
+            //    name: "ApiById",
+            //    routeTemplate: "{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional },
+            //    constraints: new { id = @"^[0-9]+$" }
+            //);
 
-            routes.MapHttpRoute(
-                name: "ApiByAction",
-                routeTemplate: "{controller}/{action}",
-                defaults: new { action = "Get" }
-            );
+            //    routes.MapHttpRoute(
+            //        name: "ApiByName",
+            //        routeTemplate: "{controller}/{action}/{name}",
+            //        defaults: null,
+            //        constraints: new { name = @"^[a-z]+$" }
+            //    );
+
+            //    routes.MapHttpRoute(
+            //        name: "ApiByAction",
+            //        routeTemplate: "{controller}/{action}",
+            //        defaults: new { action = "Get" }
+            //    );
+            //}
         }
     }
 }

@@ -1,11 +1,3 @@
-D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.dll.config
-D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.dll
-D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.pdb
-D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\EntityFramework.dll
-D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\EntityFramework.xml
-D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.dll
-D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.pdb
-D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.csprojResolveAssemblyReference.cache
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.dll.config
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.pdb
@@ -14,3 +6,10 @@ D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\bin\Debug\E
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.csprojResolveAssemblyReference.cache
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.dll
 D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.pdb
+D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.dll.config
+D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.dll
+D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\DBEntities.pdb
+D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\EntityFramework.dll
+D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\EntityFramework.xml
+D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.dll
+D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.pdb

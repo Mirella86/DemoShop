@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClothingBrandMapper.cs" />
     <Compile Include="ClothingMapper.cs" />
+    <Compile Include="CosmeticBrandMapper.cs" />
     <Compile Include="CosmeticMapper.cs" />
     <Compile Include="IMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -7,6 +7,7 @@ using Castle.Windsor;
 using Castle.Windsor.Installer;
 using DBEntities;
 using ShopDAL;
+using ShopDALServices;
 using ShopDomainServices;
 using ShopModelMapper;
 
@@ -49,6 +50,16 @@ namespace WebApplicationService
             get { return _container.Resolve<IClothingDomainService>(); }
         }
 
+        public IClothingBrandDomainService ClothingBrandDomainService
+        {
+            get { return _container.Resolve<IClothingBrandDomainService>(); }
+        }
+
+        public ICosmeticBrandDomainService CosmeticBrandDomainService
+        {
+            get { return _container.Resolve<ICosmeticBrandDomainService>(); }
+        }
+
         private void InitializeWindsor()
         {
             _container = new WindsorContainer();
@@ -60,6 +71,8 @@ namespace WebApplicationService
             _container.Register(Component.For(typeof(IMapper<Clothing>)).ImplementedBy(typeof(ClothingMapper)).LifeStyle.Transient);
             _container.Register(Component.For<ICosmeticDomainService>().ImplementedBy<CosmeticDomainService>().LifeStyle.Transient);
             _container.Register(Component.For<IClothingDomainService>().ImplementedBy<ClothingDomainService>().LifeStyle.Transient);
+            _container.Register(Component.For<IClothingBrandDomainService>().ImplementedBy<ClothingBrandDomainService>().LifeStyle.Transient);
+            _container.Register(Component.For<ICosmeticBrandDomainService>().ImplementedBy<CosmeticBrandDomainService>().LifeStyle.Transient);
             _container.Register(Component.For<IEntity>().ImplementedBy<Entity>().LifeStyle.Transient);
         }
     }
