@@ -1,40 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DemoShopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DemoShop_MirelaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DemoShopEntities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="Clothings" EntityType="DemoShopModel.Clothing" />
-    <EntitySet Name="Clothing_Brand" EntityType="DemoShopModel.Clothing_Brand" />
-    <EntitySet Name="Clothing_Category" EntityType="DemoShopModel.Clothing_Category" />
-    <EntitySet Name="Clothing_Gender" EntityType="DemoShopModel.Clothing_Gender" />
-    <EntitySet Name="Clothing_Stock" EntityType="DemoShopModel.Clothing_Stock" />
-    <EntitySet Name="Cosmetics" EntityType="DemoShopModel.Cosmetic" />
-    <EntitySet Name="Cosmetic_Brand" EntityType="DemoShopModel.Cosmetic_Brand" />
-    <EntitySet Name="Cosmetic_Category" EntityType="DemoShopModel.Cosmetic_Category" />
-    <AssociationSet Name="FK_Clothing_Clothing_Brand" Association="DemoShopModel.FK_Clothing_Clothing_Brand">
+    <EntitySet Name="Clothings" EntityType="DemoShop_MirelaModel.Clothing" />
+    <EntitySet Name="Clothing_Brand" EntityType="DemoShop_MirelaModel.Clothing_Brand" />
+    <EntitySet Name="Clothing_Category" EntityType="DemoShop_MirelaModel.Clothing_Category" />
+    <EntitySet Name="Clothing_Gender" EntityType="DemoShop_MirelaModel.Clothing_Gender" />
+    <EntitySet Name="Clothing_Stock" EntityType="DemoShop_MirelaModel.Clothing_Stock" />
+    <EntitySet Name="Cosmetics" EntityType="DemoShop_MirelaModel.Cosmetic" />
+    <EntitySet Name="Cosmetic_Brand" EntityType="DemoShop_MirelaModel.Cosmetic_Brand" />
+    <EntitySet Name="Cosmetic_Category" EntityType="DemoShop_MirelaModel.Cosmetic_Category" />
+    <AssociationSet Name="FK_Clothing_Clothing_Brand" Association="DemoShop_MirelaModel.FK_Clothing_Clothing_Brand">
       <End Role="Clothing_Brand" EntitySet="Clothing_Brand" />
       <End Role="Clothing" EntitySet="Clothings" />
     </AssociationSet>
-    <AssociationSet Name="FK_Clothing_Clothing_Category" Association="DemoShopModel.FK_Clothing_Clothing_Category">
+    <AssociationSet Name="FK_Clothing_Clothing_Category" Association="DemoShop_MirelaModel.FK_Clothing_Clothing_Category">
       <End Role="Clothing_Category" EntitySet="Clothing_Category" />
       <End Role="Clothing" EntitySet="Clothings" />
     </AssociationSet>
-    <AssociationSet Name="FK_Clothing_Clothing_Gender" Association="DemoShopModel.FK_Clothing_Clothing_Gender">
+    <AssociationSet Name="FK_Clothing_Clothing_Gender" Association="DemoShop_MirelaModel.FK_Clothing_Clothing_Gender">
       <End Role="Clothing_Gender" EntitySet="Clothing_Gender" />
       <End Role="Clothing" EntitySet="Clothings" />
     </AssociationSet>
-    <AssociationSet Name="FK_Clothing_Stock_Clothing" Association="DemoShopModel.FK_Clothing_Stock_Clothing">
+    <AssociationSet Name="FK_Clothing_Stock_Clothing" Association="DemoShop_MirelaModel.FK_Clothing_Stock_Clothing">
       <End Role="Clothing" EntitySet="Clothings" />
       <End Role="Clothing_Stock" EntitySet="Clothing_Stock" />
     </AssociationSet>
-    <AssociationSet Name="FK_Cosmetic_Clothing_Brand" Association="DemoShopModel.FK_Cosmetic_Clothing_Brand">
-      <End Role="Clothing_Brand" EntitySet="Clothing_Brand" />
-      <End Role="Cosmetic" EntitySet="Cosmetics" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cosmetic_Cosmetic_Category" Association="DemoShopModel.FK_Cosmetic_Cosmetic_Category">
-      <End Role="Cosmetic_Category" EntitySet="Cosmetic_Category" />
-      <End Role="Cosmetic" EntitySet="Cosmetics" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cosmetic_Cosmetic_Brand" Association="DemoShopModel.FK_Cosmetic_Cosmetic_Brand">
+    <AssociationSet Name="FK_Cosmetic_Cosmetic_Brand" Association="DemoShop_MirelaModel.FK_Cosmetic_Cosmetic_Brand">
       <End Role="Cosmetic_Brand" EntitySet="Cosmetic_Brand" />
+      <End Role="Cosmetic" EntitySet="Cosmetics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cosmetic_Cosmetic_Category" Association="DemoShop_MirelaModel.FK_Cosmetic_Cosmetic_Category">
+      <End Role="Cosmetic_Category" EntitySet="Cosmetic_Category" />
       <End Role="Cosmetic" EntitySet="Cosmetics" />
     </AssociationSet>
   </EntityContainer>
@@ -47,10 +43,10 @@
     <Property Name="BrandId" Type="Int32" Nullable="false" />
     <Property Name="GenderId" Type="Int32" Nullable="false" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Clothing_Brand" Relationship="DemoShopModel.FK_Clothing_Clothing_Brand" FromRole="Clothing" ToRole="Clothing_Brand" />
-    <NavigationProperty Name="Clothing_Category" Relationship="DemoShopModel.FK_Clothing_Clothing_Category" FromRole="Clothing" ToRole="Clothing_Category" />
-    <NavigationProperty Name="Clothing_Gender" Relationship="DemoShopModel.FK_Clothing_Clothing_Gender" FromRole="Clothing" ToRole="Clothing_Gender" />
-    <NavigationProperty Name="Clothing_Stock" Relationship="DemoShopModel.FK_Clothing_Stock_Clothing" FromRole="Clothing" ToRole="Clothing_Stock" />
+    <NavigationProperty Name="Clothing_Brand" Relationship="DemoShop_MirelaModel.FK_Clothing_Clothing_Brand" FromRole="Clothing" ToRole="Clothing_Brand" />
+    <NavigationProperty Name="Clothing_Category" Relationship="DemoShop_MirelaModel.FK_Clothing_Clothing_Category" FromRole="Clothing" ToRole="Clothing_Category" />
+    <NavigationProperty Name="Clothing_Gender" Relationship="DemoShop_MirelaModel.FK_Clothing_Clothing_Gender" FromRole="Clothing" ToRole="Clothing_Gender" />
+    <NavigationProperty Name="Clothing_Stock" Relationship="DemoShop_MirelaModel.FK_Clothing_Stock_Clothing" FromRole="Clothing" ToRole="Clothing_Stock" />
   </EntityType>
   <EntityType Name="Clothing_Brand">
     <Key>
@@ -58,8 +54,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Clothings" Relationship="DemoShopModel.FK_Clothing_Clothing_Brand" FromRole="Clothing_Brand" ToRole="Clothing" />
-    <NavigationProperty Name="Cosmetics" Relationship="DemoShopModel.FK_Cosmetic_Clothing_Brand" FromRole="Clothing_Brand" ToRole="Cosmetic" />
+    <NavigationProperty Name="Clothings" Relationship="DemoShop_MirelaModel.FK_Clothing_Clothing_Brand" FromRole="Clothing_Brand" ToRole="Clothing" />
   </EntityType>
   <EntityType Name="Clothing_Category">
     <Key>
@@ -67,7 +62,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Clothings" Relationship="DemoShopModel.FK_Clothing_Clothing_Category" FromRole="Clothing_Category" ToRole="Clothing" />
+    <NavigationProperty Name="Clothings" Relationship="DemoShop_MirelaModel.FK_Clothing_Clothing_Category" FromRole="Clothing_Category" ToRole="Clothing" />
   </EntityType>
   <EntityType Name="Clothing_Gender">
     <Key>
@@ -75,7 +70,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Clothings" Relationship="DemoShopModel.FK_Clothing_Clothing_Gender" FromRole="Clothing_Gender" ToRole="Clothing" />
+    <NavigationProperty Name="Clothings" Relationship="DemoShop_MirelaModel.FK_Clothing_Clothing_Gender" FromRole="Clothing_Gender" ToRole="Clothing" />
   </EntityType>
   <EntityType Name="Clothing_Stock">
     <Key>
@@ -85,7 +80,7 @@
     <Property Name="Size" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
     <Property Name="ClothingId" Type="Int32" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Clothing" Relationship="DemoShopModel.FK_Clothing_Stock_Clothing" FromRole="Clothing_Stock" ToRole="Clothing" />
+    <NavigationProperty Name="Clothing" Relationship="DemoShop_MirelaModel.FK_Clothing_Stock_Clothing" FromRole="Clothing_Stock" ToRole="Clothing" />
   </EntityType>
   <EntityType Name="Cosmetic">
     <Key>
@@ -96,8 +91,8 @@
     <Property Name="BrandId" Type="Int32" Nullable="false" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Cosmetic_Category" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Category" FromRole="Cosmetic" ToRole="Cosmetic_Category" />
-    <NavigationProperty Name="Cosmetic_Brand" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic" ToRole="Cosmetic_Brand" />
+    <NavigationProperty Name="Cosmetic_Brand" Relationship="DemoShop_MirelaModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic" ToRole="Cosmetic_Brand" />
+    <NavigationProperty Name="Cosmetic_Category" Relationship="DemoShop_MirelaModel.FK_Cosmetic_Cosmetic_Category" FromRole="Cosmetic" ToRole="Cosmetic_Category" />
   </EntityType>
   <EntityType Name="Cosmetic_Brand">
     <Key>
@@ -105,7 +100,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Cosmetics" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic_Brand" ToRole="Cosmetic" />
+    <NavigationProperty Name="Cosmetics" Relationship="DemoShop_MirelaModel.FK_Cosmetic_Cosmetic_Brand" FromRole="Cosmetic_Brand" ToRole="Cosmetic" />
   </EntityType>
   <EntityType Name="Cosmetic_Category">
     <Key>
@@ -113,11 +108,11 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Cosmetics" Relationship="DemoShopModel.FK_Cosmetic_Cosmetic_Category" FromRole="Cosmetic_Category" ToRole="Cosmetic" />
+    <NavigationProperty Name="Cosmetics" Relationship="DemoShop_MirelaModel.FK_Cosmetic_Cosmetic_Category" FromRole="Cosmetic_Category" ToRole="Cosmetic" />
   </EntityType>
   <Association Name="FK_Clothing_Clothing_Brand">
-    <End Role="Clothing_Brand" Type="DemoShopModel.Clothing_Brand" Multiplicity="1" />
-    <End Role="Clothing" Type="DemoShopModel.Clothing" Multiplicity="*" />
+    <End Role="Clothing_Brand" Type="DemoShop_MirelaModel.Clothing_Brand" Multiplicity="1" />
+    <End Role="Clothing" Type="DemoShop_MirelaModel.Clothing" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Clothing_Brand">
         <PropertyRef Name="Id" />
@@ -128,8 +123,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Clothing_Clothing_Category">
-    <End Role="Clothing_Category" Type="DemoShopModel.Clothing_Category" Multiplicity="1" />
-    <End Role="Clothing" Type="DemoShopModel.Clothing" Multiplicity="*" />
+    <End Role="Clothing_Category" Type="DemoShop_MirelaModel.Clothing_Category" Multiplicity="1" />
+    <End Role="Clothing" Type="DemoShop_MirelaModel.Clothing" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Clothing_Category">
         <PropertyRef Name="Id" />
@@ -140,8 +135,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Clothing_Clothing_Gender">
-    <End Role="Clothing_Gender" Type="DemoShopModel.Clothing_Gender" Multiplicity="1" />
-    <End Role="Clothing" Type="DemoShopModel.Clothing" Multiplicity="*" />
+    <End Role="Clothing_Gender" Type="DemoShop_MirelaModel.Clothing_Gender" Multiplicity="1" />
+    <End Role="Clothing" Type="DemoShop_MirelaModel.Clothing" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Clothing_Gender">
         <PropertyRef Name="Id" />
@@ -152,8 +147,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Clothing_Stock_Clothing">
-    <End Role="Clothing" Type="DemoShopModel.Clothing" Multiplicity="1" />
-    <End Role="Clothing_Stock" Type="DemoShopModel.Clothing_Stock" Multiplicity="*" />
+    <End Role="Clothing" Type="DemoShop_MirelaModel.Clothing" Multiplicity="1" />
+    <End Role="Clothing_Stock" Type="DemoShop_MirelaModel.Clothing_Stock" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Clothing">
         <PropertyRef Name="Id" />
@@ -163,11 +158,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Cosmetic_Clothing_Brand">
-    <End Role="Clothing_Brand" Type="DemoShopModel.Clothing_Brand" Multiplicity="1" />
-    <End Role="Cosmetic" Type="DemoShopModel.Cosmetic" Multiplicity="*" />
+  <Association Name="FK_Cosmetic_Cosmetic_Brand">
+    <End Role="Cosmetic_Brand" Type="DemoShop_MirelaModel.Cosmetic_Brand" Multiplicity="1" />
+    <End Role="Cosmetic" Type="DemoShop_MirelaModel.Cosmetic" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Clothing_Brand">
+      <Principal Role="Cosmetic_Brand">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Cosmetic">
@@ -176,26 +171,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cosmetic_Cosmetic_Category">
-    <End Role="Cosmetic_Category" Type="DemoShopModel.Cosmetic_Category" Multiplicity="1" />
-    <End Role="Cosmetic" Type="DemoShopModel.Cosmetic" Multiplicity="*" />
+    <End Role="Cosmetic_Category" Type="DemoShop_MirelaModel.Cosmetic_Category" Multiplicity="1" />
+    <End Role="Cosmetic" Type="DemoShop_MirelaModel.Cosmetic" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cosmetic_Category">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Cosmetic">
         <PropertyRef Name="CategoryId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Cosmetic_Cosmetic_Brand">
-    <End Type="DemoShopModel.Cosmetic_Brand" Role="Cosmetic_Brand" Multiplicity="1" />
-    <End Type="DemoShopModel.Cosmetic" Role="Cosmetic" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cosmetic_Brand">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Cosmetic">
-        <PropertyRef Name="BrandId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

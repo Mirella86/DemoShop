@@ -17,13 +17,11 @@ namespace DBEntities
         public Clothing_Brand()
         {
             this.Clothings = new HashSet<Clothing>();
-            this.Cosmetics = new HashSet<Cosmetic>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         public virtual ICollection<Clothing> Clothings { get; set; }
-        public virtual ICollection<Cosmetic> Cosmetics { get; set; }
     }
 }

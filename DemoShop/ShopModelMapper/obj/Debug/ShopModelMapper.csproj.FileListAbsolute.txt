@@ -11,3 +11,16 @@ D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.dll
 D:\Git\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.pdb
 D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.dll
 D:\Git\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.pdb
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.dll
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModelMapper.pdb
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.dll
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.dll
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.dll
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.dll
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\DBEntities.pdb
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopDAL.pdb
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\ShopModels.pdb
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\bin\Debug\EntityFramework.xml
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.csprojResolveAssemblyReference.cache
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.dll
+D:\TFS Training\InternalTrainnig\Mirela\DemoShop\DemoShop\ShopModelMapper\obj\Debug\ShopModelMapper.pdb

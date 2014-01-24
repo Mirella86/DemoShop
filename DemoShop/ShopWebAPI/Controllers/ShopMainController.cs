@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ShopModels;
 
 namespace WebApplicationService.Controllers
 {
@@ -19,6 +20,8 @@ namespace WebApplicationService.Controllers
             }
             return productTypes;
         }
+
+
 
         public enum ProductTypeEnum
         {

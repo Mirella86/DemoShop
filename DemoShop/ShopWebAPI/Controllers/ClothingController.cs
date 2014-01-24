@@ -13,17 +13,23 @@ namespace WebApplicationService
         private IClothingDomainService _clothingDomainService;
         // GET: /Cosmetic/
 
+
         public ClothingController()
         {
             _clothingDomainService = WindsorResolver.Instance.ClothingDomainService;
         }
 
         // GET /Clothing
+        [HttpGet]
+        [ActionName("GetAllClothings")]
         public IEnumerable<ClothingModel> GetAllClothing()
         {
             return _clothingDomainService.GetAll().Cast<ClothingModel>().ToList();
         }
+      
+        
         // GET /Clothing/id
+        [ActionName("GetClothingById")]
         public ClothingModel GetById(int id)
         {
             return (ClothingModel)_clothingDomainService.Get(id);
@@ -31,21 +37,24 @@ namespace WebApplicationService
 
 
         // POST Clothing
-        public void Insert(ClothingModel model)
+        [ActionName("InsertOrUpdate")]
+        public void InsertOrUpdate(ClothingModel model)
         {
-            _clothingDomainService.Insert(model);
+            if (model.Id == null || model.Id == 0)
+                _clothingDomainService.Insert(model);
+            else
+                _clothingDomainService.Update(model);
         }
 
-        // PUT Clothing/5
-        public void Update(ClothingModel model)
-        {
-            _clothingDomainService.Update(model);
-        }
-
-        // DELETE Clothing/5
+        [HttpDelete]
+        [ActionName("Delete")]
         public void Delete(int id)
         {
             _clothingDomainService.Delete(id);
         }
+
+
+
+
     }
 }

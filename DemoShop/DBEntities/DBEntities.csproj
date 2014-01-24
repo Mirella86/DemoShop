@@ -11,6 +11,10 @@
     <AssemblyName>DBEntities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,9 +91,10 @@
     </Compile>
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="PartialEntities\_partialClothing.cs" />
+    <Compile Include="PartialEntities\_partialClothingBrand.cs" />
+    <Compile Include="PartialEntities\_partialCosmetic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_partialClothing.cs" />
-    <Compile Include="_partialCosmetic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

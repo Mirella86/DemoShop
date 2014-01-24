@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DemoShopModelStoreContainer" CdmEntityContainer="DemoShopEntities">
+  <EntityContainerMapping StorageEntityContainer="DemoShop_MirelaModelStoreContainer" CdmEntityContainer="DemoShopEntities">
     <EntitySetMapping Name="Clothings">
-      <EntityTypeMapping TypeName="DemoShopModel.Clothing">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Clothing">
         <MappingFragment StoreEntitySet="Clothing">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clothing_Brand">
-      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Brand">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Clothing_Brand">
         <MappingFragment StoreEntitySet="Clothing_Brand">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -21,7 +21,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clothing_Category">
-      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Category">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Clothing_Category">
         <MappingFragment StoreEntitySet="Clothing_Category">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clothing_Gender">
-      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Gender">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Clothing_Gender">
         <MappingFragment StoreEntitySet="Clothing_Gender">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -37,7 +37,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clothing_Stock">
-      <EntityTypeMapping TypeName="DemoShopModel.Clothing_Stock">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Clothing_Stock">
         <MappingFragment StoreEntitySet="Clothing_Stock">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Size" ColumnName="Size" />
@@ -47,7 +47,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cosmetics">
-      <EntityTypeMapping TypeName="DemoShopModel.Cosmetic">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Cosmetic">
         <MappingFragment StoreEntitySet="Cosmetic">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -58,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cosmetic_Brand">
-      <EntityTypeMapping TypeName="DemoShopModel.Cosmetic_Brand">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Cosmetic_Brand">
         <MappingFragment StoreEntitySet="Cosmetic_Brand">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -66,7 +66,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cosmetic_Category">
-      <EntityTypeMapping TypeName="DemoShopModel.Cosmetic_Category">
+      <EntityTypeMapping TypeName="DemoShop_MirelaModel.Cosmetic_Category">
         <MappingFragment StoreEntitySet="Cosmetic_Category">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />

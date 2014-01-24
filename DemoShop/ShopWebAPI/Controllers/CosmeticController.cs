@@ -32,18 +32,18 @@ namespace WebApplicationService.Controllers
         }
 
         // POST cosmetic
-        public void Insert(CosmeticModel model)
+        [ActionName("InsertOrUpdate")]
+        public void InsertOrUpdate(ClothingModel model)
         {
-            _cosmeticDomainService.Insert(model);
-        }
-
-        // PUT cosmetic/5
-        public void Update(int id, CosmeticModel model)
-        {
-            _cosmeticDomainService.Update(model);
+            if (model.Id == null || model.Id == 0)
+                _cosmeticDomainService.Insert(model);
+            else
+                _cosmeticDomainService.Update(model);
         }
 
         // DELETE cosmetic/5
+        [HttpDelete]
+        [ActionName("Delete")]
         public void Delete(int id)
         {
             _cosmeticDomainService.Delete(id);

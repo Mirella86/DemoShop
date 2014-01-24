@@ -20,8 +20,7 @@ namespace ShopModelMapper
                 BrandId = entity.BrandId,
                 BrandName = entity.Cosmetic_Brand == null ? "" : entity.Cosmetic_Brand.Name,
                 CategoryId = entity.CategoryId,
-                CategoryName = entity.Cosmetic_Category == null ? "" : entity.Cosmetic_Category.Name,
-
+                CategoryName = entity.Cosmetic_Category == null ? "" : entity.Cosmetic_Category.Name
 
             };
         }
@@ -32,7 +31,10 @@ namespace ShopModelMapper
             return new Cosmetic
             {
                 Id = cosmeticModel.Id,
-                Name = cosmeticModel.Name
+                Name = cosmeticModel.Name,
+                BrandId=cosmeticModel.BrandId,
+                CategoryId=cosmeticModel.CategoryId,
+                Stock=cosmeticModel.Stock
             };
         }
 

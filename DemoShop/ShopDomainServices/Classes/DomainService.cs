@@ -50,7 +50,7 @@ namespace ShopDomainServices
             _repository.Delete(id);
         }
 
-        public void Update(Model model)
+        public virtual void Update(Model model)
         {
             _repository.Update(_mapper.GetEntityFromModel(model));
         }

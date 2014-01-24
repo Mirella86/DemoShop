@@ -10,27 +10,71 @@
             <th>Name</th>
             <th>Brand</th>
             <th>Category</th>
-            <th>Gender</th>
+            <th data-bind="visible: chosenProductTypeId() == 1">Gender</th>
+            <th data-bind="visible: chosenProductTypeId() == 2">Stocks</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
 
-    <h2>Clothing list</h2>
+    <h2>Product list</h2>
     <tbody data-bind="foreach: products">
         <tr>
-            <td data-bind="text: Name"></td>
-            <td data-bind="text: Brand().Name"></td>
-            <td  data-bind="text: Category().Name"></td>
-            <td  data-bind="text: Gender().Name, visible: Gender()!=null" ></td>
-@*            <td data-bind="text: Stock, enable: $root.chosenProductTypeId() == 2"></td>*@
             <td>
-                <button data-bind="click: $root.removeClothing">X</button></td>
-            @*            <td><button data-bind="click: $root.updateClothing, enable: validObject()">Update</button></td>*@
+                <input data-bind="value: Name, enable: areFieldsEditable" /></td>
+            <td>
+                <select data-bind="options: $root.availableBrands, optionsText: 'Name', optionsValue: 'Id', value: BrandId, enable: areFieldsEditable"></select>
+            </td>
+            <td>
+                <select data-bind="options: $root.availableCategories, optionsText: 'Name', optionsValue: 'Id', value: CategoryId, enable: areFieldsEditable"></select>
+            </td>
+            <td>
+                <select data-bind="options: $root.availableGenders, optionsText: 'Name', optionsValue: 'Id', value: GenderId, enable: areFieldsEditable, visible: $root.chosenProductTypeId() == 1"></select>
+            </td>
+            <td>
+                <input data-bind="value: Stock, enable: areFieldsEditable, visible: $root.chosenProductTypeId() == 2" />
+            </td>
+            <td>
+                <button data-bind="click: $root.removeProduct">X</button>
+            </td>
+            <td>
+                <button data-bind="click: $data.setFieldsEditable, visible: !areFieldsEditable()">Edit</button>
+                <button data-bind="click: $data.saveProduct, visible: areFieldsEditable, enable: !Name() == ''">Save</button>
+            </td>
+        </tr>
+        <tr>
+            <td data-bind="visible: $root.chosenProductTypeId() == 1 && areFieldsEditable">
+                <table style="width: 50px">
+                    <thead>
+                        <th></th>
+                        <th>Size</th>
+                        <th>Stock</th>
+                    </thead>
+                    <tbody data-bind="foreach: StockList">
+                        <tr>
+                            <td>
+                                <input type="hidden" data-bind="value: Id" />
+                                <input type="hidden" data-bind="value: ClothingId" /></td>
+                            <td>
+                                <input data-bind="value: Size" />
+                            </td>
+                            <td>
+                                <input data-bind="value: Stock" /></td>
+                            <td>
+                                <button data-bind="click: saveStock, enable: !Size()==''">Save stock</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button data-bind="click: addStock">Add size</button>
+            </td>
         </tr>
     </tbody>
 </table>
 <button data-bind="click: addClothing, enable: products().length < 50">Add another clothing article</button>
-@*<button data-bind="click: updateAll, enable: validObjects()">Update all</button>*@
 <h3>Number of items:   <span data-bind="text: products().length" /></h3>
+
+
 
 
 
