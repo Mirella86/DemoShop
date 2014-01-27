@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShopModels
 {
-    public class GenderModel :Model
+    public class GenderModel : Model
     {
         public string Name { get; set; }
     }

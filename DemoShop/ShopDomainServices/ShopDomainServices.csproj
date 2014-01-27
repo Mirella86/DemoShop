@@ -46,15 +46,19 @@
     <Compile Include="Classes\ClothingCategoryDomainService.cs" />
     <Compile Include="Classes\ClothingDomainService.cs" />
     <Compile Include="Classes\CosmeticBrandDomainService.cs" />
+    <Compile Include="Classes\CosmeticCategoryDomainService.cs" />
     <Compile Include="Classes\CosmeticDomainService.cs" />
     <Compile Include="Classes\DomainService.cs" />
     <Compile Include="Classes\ClothingBrandDomainService.cs" />
+    <Compile Include="Classes\GenderDomainService.cs" />
     <Compile Include="Interfaces\IClothingCategoryDomainService.cs" />
     <Compile Include="Interfaces\ICosmeticBrandDomainService.cs" />
     <Compile Include="Interfaces\IClothingBrandDomainService.cs" />
     <Compile Include="Interfaces\IClothingDomainService.cs" />
+    <Compile Include="Interfaces\ICosmeticCategoryDomainService.cs" />
     <Compile Include="Interfaces\ICosmeticDomainService.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
+    <Compile Include="Interfaces\IGenderDomainService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

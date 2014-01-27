@@ -4,50 +4,34 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ShopDALServices;
 using ShopModels;
+using WebApplicationService;
 
 namespace WebApi.Controllers
 {
     public class CategoriesController : ApiController
     {
 
-        public IEnumerable<CategoryModel> GetBrands()
+        private IClothingCategoryDomainService _clothingCategoryDomainService;
+        private ICosmeticCategoryDomainService _cosmeticCategoryDomainService;
+
+
+        [System.Web.Http.HttpGet]
+        public IEnumerable<CategoryModel> GetBrands(int productType)
         {
-            var categories = new List<CategoryModel>
+            switch (productType)
             {
-                new CategoryModel {Id = 1, Name = "Blouses"},
-                new CategoryModel {Id = 2, Name = "Pants"},
-                new CategoryModel {Id = 3, Name = "Jackets"}
-            };
-
-            return categories;
-
+                case 1:
+                    _clothingCategoryDomainService = WindsorResolver.Instance.ClothingCategoryDomainService;
+                    return _clothingCategoryDomainService.GetAll().Cast<ClothingCategoryModel>().ToList();
+                case 2:
+                    _cosmeticCategoryDomainService = WindsorResolver.Instance.CosmeticCategoryDomainService;
+                    return _cosmeticCategoryDomainService.GetAll().Cast<CosmeticCategoryModel>().ToList();
+                default:
+                    throw new Exception("Cannot find brands");
+            }
         }
-    //    // GET api/categories
-    //    public IEnumerable<string> Get()
-    //    {
-    //        return new string[] { "value1", "value2" };
-    //    }
-
-    //    // GET api/categories/5
-    //    public string Get(int id)
-    //    {
-    //        return "value";
-    //    }
-
-    //    // POST api/categories
-    //    public void Post([FromBody]string value)
-    //    {
-    //    }
-
-    //    // PUT api/categories/5
-    //    public void Put(int id, [FromBody]string value)
-    //    {
-    //    }
-
-    //    // DELETE api/categories/5
-    //    public void Delete(int id)
-    //    {
-    //    }
+ 
     }
 }

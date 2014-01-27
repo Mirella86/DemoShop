@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrandModel.cs" />
-    <Compile Include="ClothingBrandModel.cs" />
     <Compile Include="CategoryModel.cs" />
+    <Compile Include="ClothingBrandModel.cs" />
+    <Compile Include="ClothingCategoryModel.cs" />
     <Compile Include="ClothingModel.cs" />
     <Compile Include="CosmeticBrandModel.cs" />
+    <Compile Include="CosmeticCategoryModel.cs" />
     <Compile Include="CosmeticModel.cs" />
     <Compile Include="GenderModel.cs" />
     <Compile Include="Model.cs" />

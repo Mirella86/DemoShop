@@ -10,9 +10,10 @@ using ShopModelMapper;
 
 namespace ShopDALServices
 {
-    class ClothingCategoryDomainService :DomainService<Clothing_Category>, IClothingCategoryDomainService
+    public class ClothingCategoryDomainService : DomainService<Clothing_Category>, IClothingCategoryDomainService
     {
-        public ClothingCategoryDomainService(IRepository<Clothing_Category> repository, IMapper<Clothing_Category> mapper) : base(repository, mapper)
+        public ClothingCategoryDomainService(IRepository<Clothing_Category> repository, IMapper<Clothing_Category> mapper)
+            : base(repository, mapper)
         {
         }
     }

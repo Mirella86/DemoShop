@@ -139,7 +139,7 @@ $(document).ready(function () {
         };
 
         self.getAvailableBrands = function () {
-            var urlGet = 'http://localhost/WebApi/api/Constants/GetBrands?productType=' + self.chosenProductTypeId();
+            var urlGet = 'http://localhost/WebApi/api/Brands/GetBrands?productType=' + self.chosenProductTypeId();
 
             $.ajax({
                 url: urlGet,
@@ -148,6 +148,7 @@ $(document).ready(function () {
                 data: JSON.stringify(1),
                 contentType: 'application/json;',
                 success: function (data) {
+                    self.availableBrands.removeAll();
                     $.each(data, function (index, value) {
                         self.availableBrands.push(new Brand(value.Id, value.Name));
                     });
@@ -158,12 +159,13 @@ $(document).ready(function () {
         };
 
         self.getAvailableCategories = function () {
-
+            var urlGet = 'http://localhost/WebApi/api/Categories/GetCategories?productType=' + self.chosenProductTypeId();
             $.ajax({
-                url: 'http://localhost/WebApi/api/Categories/',
+                url: urlGet,
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
+                    self.availableCategories.removeAll();
                     $.each(data, function (index, value) {
                         self.availableCategories.push(new Category(value.Id, value.Name));
                     });
@@ -179,10 +181,11 @@ $(document).ready(function () {
         self.getAvailableGenders = function () {
 
             $.ajax({
-                url: 'http://localhost/WebApi/api/Constants/GetGenders',
+                url: 'http://localhost/WebApi/api/Genders/GetGenders',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
+                    self.availableGenders.removeAll();
                     $.each(data, function (index, value) {
                         self.availableGenders.push(new Gender(value.Id, value.Name));
                     });

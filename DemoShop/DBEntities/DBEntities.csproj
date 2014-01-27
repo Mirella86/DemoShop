@@ -96,6 +96,8 @@
     <Compile Include="PartialEntities\_partialClothingCategory.cs" />
     <Compile Include="PartialEntities\_partialCosmetic.cs" />
     <Compile Include="PartialEntities\_partialCosmeticBrand.cs" />
+    <Compile Include="PartialEntities\_partialCosmeticCategory.cs" />
+    <Compile Include="PartialEntities\_partialGender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
