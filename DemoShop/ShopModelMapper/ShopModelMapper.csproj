@@ -52,6 +52,7 @@
     <Compile Include="CosmeticMapper.cs" />
     <Compile Include="IMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBEntities\DBEntities.csproj">

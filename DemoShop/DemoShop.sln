@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopModels", "ShopModels\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopBLTest", "ShopDALTest\ShopBLTest.csproj", "{E34F9A69-E91C-4C1F-B33B-D0D3ABCEC66F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopWebApi", "WebApi\ShopWebApi.csproj", "{05CB8B60-4496-4266-A2A2-5984C9ED0DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

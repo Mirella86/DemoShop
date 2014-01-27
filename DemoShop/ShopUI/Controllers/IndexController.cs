@@ -9,7 +9,7 @@ using WebApplicationService;
 
 namespace ShopUI.Controllers
 {
-    public class ClothingController : Controller
+    public class IndexController : Controller
     {
         //private IClothingBrandDomainService _clothingBrandDomainService;
         //private ICosmeticBrandDomainService _cosmeticBrandDomainService;

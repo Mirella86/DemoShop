@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using DBEntities;
 using ShopDomainServices;
 using ShopModels;
 using WebApplicationService;
@@ -33,7 +34,7 @@ namespace WebApi.Controllers
 
         // POST cosmetic
         //[ActionName("InsertOrUpdate")]
-        public void InsertOrUpdate(ClothingModel model)
+        public void InsertOrUpdate(CosmeticModel model)
         {
             if (model.Id == null || model.Id == 0)
                 _cosmeticDomainService.Insert(model);

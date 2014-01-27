@@ -33,7 +33,35 @@ $(document).ready(function () {
         self.Size = ko.observable(size);
         self.Stock = ko.observable(stock);
 
-        self.saveStock = function () {
+        self.saveStock = function (stock) {
+            $.ajax({
+                url: 'http://localhost/WebApi/api/ClothingStock/',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: ko.toJSON(stock),
+                success: function () {
+          //          alert('save product success');
+                },
+                error: function () {
+                    alert("Error saving stock");
+                }
+            });
+        };
+
+        self.deleteStock = function (stock) {
+            var urlDelete = 'http://localhost/WebApi/api/ClothingStock/' + stock.Id();
+
+            $.ajax({
+                url: urlDelete,
+                type: 'DELETE',
+                contentType: 'application/json; charset=utf-8',
+                success: function () {
+                    alert('delete product success');
+                },
+                error: function () {
+                    alert("Error gettin data from server");
+                }
+            });
         };
     }
 
@@ -69,27 +97,7 @@ $(document).ready(function () {
             self.areFieldsEditable(true);
 
         };
-
-        self.saveProduct = function (product) {
-            self.areFieldsEditable(false);
-
-            $.ajax({
-                url: 'http://localhost/WebApi/api/Clothing/',
-                type: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                data: ko.toJSON(product),
-                success: function () {
-                    alert('save product success');
-                },
-                error: function () {
-                    alert("Error gettin data from server");
-                }
-            });
-        };
-
-        //    self.Stock = ko.observable(stock);
-        //     self.StockList = ko.observableArray([]);
-
+        
     }
 
     // Overall viewmodel for this screen, along with initial state
@@ -212,7 +220,7 @@ $(document).ready(function () {
             if (self.chosenProductTypeId() == undefined)
                 self.chosenProductTypeId(1);
 
-            if (self.chosenProductTypeId() == 1)  {
+            if (self.chosenProductTypeId() == 1) {
 
                 $.ajax({
                     url: 'http://localhost/WebApi/api/Clothing/',
@@ -222,7 +230,7 @@ $(document).ready(function () {
                         self.products.removeAll();
                         $.each(data, function (index, value) {
                             self.products.push(new Product(value.Id, value.Name, value.GenderId, value.GenderName, value.BrandId, value.BrandName, value.CategoryId, value.CategoryName, "", value.Stocks, false));
-                       
+
                         });
                     },
                     error: function () {
@@ -269,10 +277,10 @@ $(document).ready(function () {
                     type: 'DELETE',
                     contentType: 'application/json; charset=utf-8',
                     success: function () {
-                        alert("delete succesful");
+                        //        alert("delete succesful");
                     },
                     error: function () {
-                        alert("deleting");
+                        alert("error deleting product");
                     }
                 });
             } else {
@@ -285,10 +293,42 @@ $(document).ready(function () {
                         success: function (data) {
                         },
                         error: function () {
-                            alert("Error gettin data from server");
+                            alert("Error deleting product");
                         }
                     });
                 };
+            }
+        };
+
+        self.saveProduct = function (product) {
+            product.areFieldsEditable(false);
+            if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
+                $.ajax({
+                    url: 'http://localhost/WebApi/api/Clothing/',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: ko.toJSON(product),
+                    success: function () {
+                        //        alert('save product success');
+                    },
+                    error: function () {
+                        alert("Error at saving clothing");
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: 'http://localhost/WebApi/api/Cosmetic/',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: ko.toJSON(product),
+                    success: function () {
+                        //             alert('save product success');
+                    },
+                    error: function () {
+                        alert("Error saving cosmetic");
+                    }
+                });
+
             }
         };
 

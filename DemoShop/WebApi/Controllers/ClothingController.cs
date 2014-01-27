@@ -25,10 +25,10 @@ namespace WebApi.Controllers
             return _clothingDomainService.GetAll().Cast<ClothingModel>().ToList();
         }
 
-        public ClothingModel GetById(int id)
-        {
-            return (ClothingModel)_clothingDomainService.Get(id);
-        }
+        //public ClothingModel GetById(int id)
+        //{
+        //    return (ClothingModel)_clothingDomainService.Get(id);
+        //}
 
         public void InsertOrUpdate(ClothingModel model)
         {

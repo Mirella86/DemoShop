@@ -12,9 +12,6 @@ namespace WebApi.Controllers
 {
     public class GendersController : ApiController
     {
-        private IClothingBrandDomainService _clothingBrandDomainService;
-        private ICosmeticBrandDomainService _cosmeticBrandDomainService;
-
         public GendersController()
         {
 

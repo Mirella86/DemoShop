@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Classes\ClothingCategoryDomainService.cs" />
     <Compile Include="Classes\ClothingDomainService.cs" />
+    <Compile Include="Classes\ClothingStockDomainService.cs" />
     <Compile Include="Classes\CosmeticBrandDomainService.cs" />
     <Compile Include="Classes\CosmeticCategoryDomainService.cs" />
     <Compile Include="Classes\CosmeticDomainService.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Interfaces\ICosmeticDomainService.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
     <Compile Include="Interfaces\IGenderDomainService.cs" />
+    <Compile Include="Interfaces\IClothingStockDomainService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
