@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         self.saveStock = function (stock) {
             $.ajax({
-                url: 'http://localhost/WebApi/api/ClothingStock/',
+                url: 'http://localhost/ShopWebApi/api/ClothingStock/',
                 type: 'POST',
                 contentType: 'application/json; charset=utf-8',
                 data: ko.toJSON(stock),
@@ -49,7 +49,7 @@ $(document).ready(function () {
         };
 
         self.deleteStock = function (stock) {
-            var urlDelete = 'http://localhost/WebApi/api/ClothingStock/' + stock.Id();
+            var urlDelete = 'http://localhost/ShopWebApi/api/ClothingStock/' + stock.Id();
 
             $.ajax({
                 url: urlDelete,
@@ -115,7 +115,7 @@ $(document).ready(function () {
         self.getProductTypes = function () {
 
             $.ajax({
-                url: 'http://localhost/WebApi/api/ShopMain/',
+                url: 'http://localhost/ShopWebApi/api/ShopMain/',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
@@ -147,7 +147,7 @@ $(document).ready(function () {
         };
 
         self.getAvailableBrands = function () {
-            var urlGet = 'http://localhost/WebApi/api/Brands/GetBrands?productType=' + self.chosenProductTypeId();
+            var urlGet = 'http://localhost/ShopWebApi/api/Brands/GetBrands?productType=' + self.chosenProductTypeId();
 
             $.ajax({
                 url: urlGet,
@@ -167,7 +167,7 @@ $(document).ready(function () {
         };
 
         self.getAvailableCategories = function () {
-            var urlGet = 'http://localhost/WebApi/api/Categories/GetCategories?productType=' + self.chosenProductTypeId();
+            var urlGet = 'http://localhost/ShopWebApi/api/Categories/GetCategories?productType=' + self.chosenProductTypeId();
             $.ajax({
                 url: urlGet,
                 type: 'GET',
@@ -189,7 +189,7 @@ $(document).ready(function () {
         self.getAvailableGenders = function () {
 
             $.ajax({
-                url: 'http://localhost/WebApi/api/Genders/GetGenders',
+                url: 'http://localhost/ShopWebApi/api/Genders/GetGenders',
                 type: 'GET',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
@@ -223,7 +223,7 @@ $(document).ready(function () {
             if (self.chosenProductTypeId() == 1) {
 
                 $.ajax({
-                    url: 'http://localhost/WebApi/api/Clothing/',
+                    url: 'http://localhost/ShopWebApi/api/Clothing/',
                     type: 'GET',
                     contentType: 'application/json; charset=utf-8',
                     success: function (data) {
@@ -241,7 +241,7 @@ $(document).ready(function () {
                 if (self.chosenProductTypeId() == 2) {
 
                     $.ajax({
-                        url: 'http://localhost/WebApi/api/Cosmetic/',
+                        url: 'http://localhost/ShopWebApi/api/Cosmetic/',
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {
@@ -271,7 +271,7 @@ $(document).ready(function () {
 
             if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
 
-                var url = 'http://localhost/WebApi/api/Clothing/' + product.ID();
+                var url = 'http://localhost/ShopWebApi/api/Clothing/' + product.ID();
                 $.ajax({
                     url: url,
                     type: 'DELETE',
@@ -287,7 +287,7 @@ $(document).ready(function () {
                 if (self.chosenProductTypeId() == 2) {
 
                     $.ajax({
-                        url: 'http://localhost/WebApi/api/Cosmetic/',
+                        url: 'http://localhost/ShopWebApi/api/Cosmetic/',
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {
@@ -304,7 +304,7 @@ $(document).ready(function () {
             product.areFieldsEditable(false);
             if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
                 $.ajax({
-                    url: 'http://localhost/WebApi/api/Clothing/',
+                    url: 'http://localhost/ShopWebApi/api/Clothing/',
                     type: 'POST',
                     contentType: 'application/json; charset=utf-8',
                     data: ko.toJSON(product),
@@ -317,7 +317,7 @@ $(document).ready(function () {
                 });
             } else {
                 $.ajax({
-                    url: 'http://localhost/WebApi/api/Cosmetic/',
+                    url: 'http://localhost/ShopWebApi/api/Cosmetic/',
                     type: 'POST',
                     contentType: 'application/json; charset=utf-8',
                     data: ko.toJSON(product),

@@ -14,21 +14,10 @@ namespace ShopDomainServices
 {
     public class ClothingDomainService : DomainService<Clothing>, IClothingDomainService
     {
-        protected IClothingRepository _repository;
-        protected ClothingMapper _mapper;
-
         public ClothingDomainService(IRepository<Clothing> repository, IMapper<Clothing> mapper)
             : base(repository, mapper)
         {
-        //    _repository = (IClothingRepository)repository;
-        //    _mapper = (ClothingMapper)mapper;
         }
 
-        //public override void Update(Model model)
-        //{
-        //    _repository.Update(_mapper.GetEntityFromModel(model));
-
-
-        //}
     }
 }
