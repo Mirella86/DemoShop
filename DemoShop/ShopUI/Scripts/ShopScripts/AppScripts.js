@@ -261,7 +261,7 @@ $(document).ready(function () {
         };
 
 
-        self.addClothing = function () {
+        self.addProduct = function () {
             self.products.push(new Product("", "", "", "", "", "", "", "", "", "", true));
 
         };

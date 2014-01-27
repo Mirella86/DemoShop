@@ -43,8 +43,8 @@
             </td>
         </tr>
         <tr>
-            <td data-bind="visible: $root.chosenProductTypeId() == 1 && areFieldsEditable">
-                <table style="width: 50px">
+            <td colspan="8" data-bind="visible: $root.chosenProductTypeId() == 1 && areFieldsEditable">
+                <table>
                     <thead>
                         <th></th>
                         <th>Size</th>
@@ -55,7 +55,7 @@
                             <td>
                                 <input type="hidden" data-bind="value: Id" />
                                 <input type="hidden" data-bind="value: ClothingId" /></td>
-                            <td>
+                            <td  style="width: 30px">
                                 <input data-bind="value: Size" />
                             </td>
                             <td>
@@ -74,7 +74,7 @@
         </tr>
     </tbody>
 </table>
-<button data-bind="click: addClothing, enable: products().length < 50">Add another product</button>
+<button data-bind="click: addProduct, enable: products().length < 50">Add another product</button>
 <h3>Number of items:   <span data-bind="text: products().length" /></h3>
 
 
