@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-@*<script src="~/Scripts/ShopScripts/ClothingScripts.js"></script>*@
+
 <h2>Index</h2>
 
 <table>
@@ -61,7 +61,7 @@
                             <td>
                                 <input data-bind="value: Stock" /></td>
                             <td>
-                                <button data-bind="click: deleteStock">X</button>
+                                <button data-bind="click: $parent.removeStock">X</button>
                             </td>
                             <td>
                                 <button data-bind="click: saveStock, enable: !Size() == ''">Save stock</button>

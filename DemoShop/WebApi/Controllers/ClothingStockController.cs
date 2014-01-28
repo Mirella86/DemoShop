@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using ShopDALServices;
 using ShopModels;
 using WebApplicationService;
@@ -14,10 +9,13 @@ namespace WebApi.Controllers
     {
         private IClothingStockDomainService _clothingStockDomainService;
 
-        public void InsertOrUpdate(StockModel model)
+        public ClothingStockController()
         {
             _clothingStockDomainService = WindsorResolver.Instance.ClothingStockDomainService;
+        }
 
+        public void InsertOrUpdate(StockModel model)
+        {
             if (model.Id == null || model.Id == 0)
                 _clothingStockDomainService.Insert(model);
             else
@@ -25,7 +23,6 @@ namespace WebApi.Controllers
         }
 
 
-        [HttpDelete]
         public void Delete(int Id)
         {
             _clothingStockDomainService.Delete(Id);

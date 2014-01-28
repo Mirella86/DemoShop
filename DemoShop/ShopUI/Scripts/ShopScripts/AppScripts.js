@@ -48,21 +48,14 @@ $(document).ready(function () {
             });
         };
 
-        self.deleteStock = function (stock) {
-            var urlDelete = 'http://localhost/ShopWebApi/api/ClothingStock/' + stock.Id();
+        //self.areFieldsEditable = ko.observable(areFieldsEditable);
+        //   self.saveVisible = ko.observable(false);
 
-            $.ajax({
-                url: urlDelete,
-                type: 'DELETE',
-                contentType: 'application/json; charset=utf-8',
-                success: function () {
-                    alert('delete product success');
-                },
-                error: function () {
-                    alert("Error gettin data from server");
-                }
-            });
-        };
+        //self.setFieldsEditable = function () {
+        //    self.areFieldsEditable(true);
+
+        //};
+     
     }
 
 
@@ -88,6 +81,21 @@ $(document).ready(function () {
 
         self.addStock = function () {
             self.StockList.push(new Stock("", self.ID, "", 0));
+        };
+
+        self.removeStock = function (stockItem) {
+            var urlDelete = 'http://localhost/ShopWebApi/api/ClothingStock/Delete?Id=' + stockItem.Id();
+            self.StockList.remove(stockItem);
+            $.ajax({
+                url: urlDelete,
+                type: 'DELETE',
+                contentType: 'application/json; charset=utf-8',
+                success: function () {
+                },
+                error: function () {
+                    alert("Error deleting stock");
+                }
+            });
         };
 
         self.areFieldsEditable = ko.observable(areFieldsEditable);
