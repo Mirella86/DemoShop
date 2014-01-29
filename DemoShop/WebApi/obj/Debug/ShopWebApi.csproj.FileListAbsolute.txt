@@ -79,6 +79,6 @@ D:\Git\DemoShop\DemoShop\WebApi\bin\ko\System.Spatial.resources.dll
 D:\Git\DemoShop\DemoShop\WebApi\bin\ru\System.Spatial.resources.dll
 D:\Git\DemoShop\DemoShop\WebApi\bin\zh-Hans\System.Spatial.resources.dll
 D:\Git\DemoShop\DemoShop\WebApi\bin\zh-Hant\System.Spatial.resources.dll
+D:\Git\DemoShop\DemoShop\WebApi\obj\Debug\ShopWebApi.csprojResolveAssemblyReference.cache
 D:\Git\DemoShop\DemoShop\WebApi\obj\Debug\WebApi.dll
 D:\Git\DemoShop\DemoShop\WebApi\obj\Debug\WebApi.pdb
-D:\Git\DemoShop\DemoShop\WebApi\obj\Debug\ShopWebApi.csprojResolveAssemblyReference.cache

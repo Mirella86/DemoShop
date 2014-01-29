@@ -13,4 +13,3 @@ D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\EntityFramework.dll
 D:\Git\DemoShop\DemoShop\DBEntities\bin\Debug\EntityFramework.xml
 D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.dll
 D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.pdb
-D:\Git\DemoShop\DemoShop\DBEntities\obj\Debug\DBEntities.csprojResolveAssemblyReference.cache

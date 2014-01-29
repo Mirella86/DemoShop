@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using ShopDALServices;
+using ShopDomainServices;
 using ShopModels;
 using WebApplicationService;
 
@@ -7,11 +8,11 @@ namespace WebApi.Controllers
 {
     public class ClothingStockController : ApiController
     {
-        private IClothingStockDomainService _clothingStockDomainService;
+        private IDomainService _clothingStockDomainService;
 
         public ClothingStockController()
         {
-            _clothingStockDomainService = WindsorResolver.Instance.ClothingStockDomainService;
+            _clothingStockDomainService = WindsorResolver.Instance.GetInstanceOfDomainService(new StockModel());
         }
 
         public void InsertOrUpdate(StockModel model)

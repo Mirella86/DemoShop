@@ -9,7 +9,7 @@ namespace DBEntities
     public partial class Clothing : Entity
     {
 
-        public override bool CompareTo(Entity clothing)
+        public override bool CompareTo(IEntity clothing)
         {
             return (this.Id == ((Clothing)clothing).Id);
         }

@@ -8,5 +8,6 @@ namespace DBEntities
 {
     public interface IEntity
     {
+        bool CompareTo(IEntity otherEntity);
     }
 }

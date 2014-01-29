@@ -3,8 +3,9 @@ namespace DBEntities
 {
     public abstract  class Entity: IEntity
     {
-
-        public abstract bool CompareTo(Entity otherEntity);
-
+        public virtual bool CompareTo(IEntity otherEntity)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

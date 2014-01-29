@@ -10,7 +10,7 @@ using DBEntities;
 
 namespace ShopDAL
 {
-    public class UnitOfWork<TEntity> : IDisposable where TEntity : Entity
+    public class UnitOfWork<TEntity> : IDisposable where TEntity : class, IEntity
     {
         private DbContext _dbContext;
         public DbSet<TEntity> dbSet;

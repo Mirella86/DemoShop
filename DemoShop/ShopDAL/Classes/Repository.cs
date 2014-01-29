@@ -12,7 +12,7 @@ using DBEntities;
 
 namespace ShopDAL
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {
 
         public IEnumerable<TEntity> GetAll()

@@ -12,11 +12,13 @@ namespace WebApi.Controllers
 {
     public class ClothingController : ApiController
     {
-        private IClothingDomainService _clothingDomainService;
+      //  private IClothingDomainService _clothingDomainService;
+        private IDomainService _clothingDomainService;
 
         public ClothingController()
         {
-            _clothingDomainService = WindsorResolver.Instance.ClothingDomainService;
+         //   _clothingDomainService = WindsorResolver.Instance.ClothingDomainService;
+            _clothingDomainService = WindsorResolver.Instance.GetInstanceOfDomainService(new ClothingModel());
         }
 
         // GET api/Clothing

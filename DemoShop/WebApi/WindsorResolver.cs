@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http.ModelBinding;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
@@ -11,6 +12,7 @@ using ShopDALServices;
 using ShopDALServices.Classes;
 using ShopDomainServices;
 using ShopModelMapper;
+using ShopModels;
 
 namespace WebApplicationService
 {
@@ -41,45 +43,30 @@ namespace WebApplicationService
             }
         }
 
-        public ICosmeticDomainService CosmeticDomainService
+        public IDomainService GetInstanceOfDomainService(Model model)
         {
-            get { return _container.Resolve<ICosmeticDomainService>(); }
+
+            Type modelType = model.GetType();
+            if (modelType == typeof(ClothingModel))
+                return _container.Resolve<IClothingDomainService>();
+            if (modelType == typeof(ClothingBrandModel))
+                return _container.Resolve<IClothingBrandDomainService>();
+            if (modelType == typeof(ClothingCategoryModel))
+                return _container.Resolve<IClothingCategoryDomainService>();
+            if (modelType == typeof(GenderModel))
+                return _container.Resolve<IGenderDomainService>();
+            if (modelType == typeof (StockModel))
+                return _container.Resolve<IClothingStockDomainService>();
+
+            if (modelType == typeof(CosmeticModel))
+                return _container.Resolve<ICosmeticDomainService>();
+            if (modelType == typeof(CosmeticBrandModel))
+                return _container.Resolve<ICosmeticBrandDomainService>();
+            if (modelType == typeof(CosmeticCategoryModel))
+                return _container.Resolve<ICosmeticCategoryDomainService>();
+            return null;
         }
 
-        public IClothingDomainService ClothingDomainService
-        {
-            get { return _container.Resolve<IClothingDomainService>(); }
-        }
-
-        public IClothingBrandDomainService ClothingBrandDomainService
-        {
-            get { return _container.Resolve<IClothingBrandDomainService>(); }
-        }
-
-        public ICosmeticBrandDomainService CosmeticBrandDomainService
-        {
-            get { return _container.Resolve<ICosmeticBrandDomainService>(); }
-        }
-
-        public IClothingCategoryDomainService ClothingCategoryDomainService
-        {
-            get { return _container.Resolve<IClothingCategoryDomainService>(); }
-        }
-
-        public ICosmeticCategoryDomainService CosmeticCategoryDomainService
-        {
-            get { return _container.Resolve<ICosmeticCategoryDomainService>(); }
-        }
-
-        public IGenderDomainService GenderDomainService
-        {
-            get { return _container.Resolve<IGenderDomainService>(); }
-        }
-
-        public IClothingStockDomainService ClothingStockDomainService
-        {
-            get { return _container.Resolve<IClothingStockDomainService>(); }
-        }
 
         private void InitializeWindsor()
         {

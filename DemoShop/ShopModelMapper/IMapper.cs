@@ -3,7 +3,7 @@ using ShopModels;
 
 namespace ShopModelMapper
 {
-    public interface IMapper<TEntity> where TEntity: Entity
+    public interface IMapper<TEntity> where TEntity: class, IEntity
     {
         Model GetModelFromEntity(TEntity entity);
         TEntity GetEntityFromModel(Model model);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,16 @@ namespace ShopDALTest
             clothingFakeList = new List<Clothing>();
 
             //add 1 clothing
-            Clothing clothingToTest = new Clothing { Id = 1, Name = "Test", BrandId = 1, CategoryId = 2, GenderId = 4 };
+            Clothing clothingToTest = new Clothing { Id = 1, Name = "Test", BrandId = 11, CategoryId = 22, GenderId = 33 };
             clothingToTest.Clothing_Category = new Clothing_Category { Id = 2, Name = "testCategory" };
             clothingToTest.Clothing_Brand = new Clothing_Brand { Id = 1, Name = "testBrand" };
             clothingToTest.Clothing_Gender = new Clothing_Gender { Id = 4, Name = "testGender" };
+            clothingToTest.Clothing_Stock = new Collection<Clothing_Stock>
+            {
+                new Clothing_Stock {  Id = 100,Size = "100", Stock = 100 },
+                new Clothing_Stock{ Id=200, Size="200", Stock=200},
+                new Clothing_Stock{ Id = 300, Size ="300", Stock=300}
+            };
 
             //add to fake repo
             clothingFakeList.Add(clothingToTest);

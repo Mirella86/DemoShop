@@ -30,8 +30,11 @@ $(document).ready(function () {
         var self = this;
         self.Id = ko.observable(id);
         self.ClothingId = ko.observable(clothingid);
-        self.Size = ko.observable(size);
-        self.Stock = ko.observable(stock);
+        self.Size = ko.observable(size).extend(
+        {
+            required: "Size needed"
+        });
+        self.Stock = ko.observable(stock).extend({ required: "Stock needed" });
 
         self.saveStock = function (stock) {
             $.ajax({
@@ -40,7 +43,7 @@ $(document).ready(function () {
                 contentType: 'application/json; charset=utf-8',
                 data: ko.toJSON(stock),
                 success: function () {
-          //          alert('save product success');
+                    alert("Stock succesfully saved");
                 },
                 error: function () {
                     alert("Error saving stock");
@@ -48,14 +51,6 @@ $(document).ready(function () {
             });
         };
 
-        //self.areFieldsEditable = ko.observable(areFieldsEditable);
-        //   self.saveVisible = ko.observable(false);
-
-        //self.setFieldsEditable = function () {
-        //    self.areFieldsEditable(true);
-
-        //};
-     
     }
 
 
@@ -80,7 +75,7 @@ $(document).ready(function () {
         }
 
         self.addStock = function () {
-            self.StockList.push(new Stock("", self.ID, "", 0));
+            self.StockList.push(new Stock(0, self.ID, 0, 0));
         };
 
         self.removeStock = function (stockItem) {
@@ -99,13 +94,12 @@ $(document).ready(function () {
         };
 
         self.areFieldsEditable = ko.observable(areFieldsEditable);
-        //   self.saveVisible = ko.observable(false);
 
         self.setFieldsEditable = function () {
             self.areFieldsEditable(true);
 
         };
-        
+
     }
 
     // Overall viewmodel for this screen, along with initial state

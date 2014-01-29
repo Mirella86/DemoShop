@@ -8,7 +8,7 @@ namespace DBEntities
 {
     public partial class Cosmetic : Entity
     {
-        public override bool CompareTo(Entity cosmetic)
+        public override bool CompareTo(IEntity cosmetic)
         {
             return (this.Id == ((Cosmetic)cosmetic).Id);
         }

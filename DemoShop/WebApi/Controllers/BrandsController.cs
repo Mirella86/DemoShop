@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ShopDALServices;
+using ShopDomainServices;
 using ShopModels;
 using WebApplicationService;
 
@@ -12,9 +13,7 @@ namespace WebApi.Controllers
 {
     public class BrandsController : ApiController
     {
-        private IClothingBrandDomainService _clothingBrandDomainService;
-        private ICosmeticBrandDomainService _cosmeticBrandDomainService;
-
+        private IDomainService _domainService;
 
         [System.Web.Http.HttpGet]
         public IEnumerable<BrandModel> GetBrands(int productType)
@@ -22,11 +21,11 @@ namespace WebApi.Controllers
             switch (productType)
             {
                 case 1:
-                    _clothingBrandDomainService = WindsorResolver.Instance.ClothingBrandDomainService;
-                    return _clothingBrandDomainService.GetAll().Cast<ClothingBrandModel>().ToList();
+                    _domainService = WindsorResolver.Instance.GetInstanceOfDomainService(new ClothingBrandModel());
+                    return _domainService.GetAll().Cast<ClothingBrandModel>().ToList();
                 case 2:
-                    _cosmeticBrandDomainService = WindsorResolver.Instance.CosmeticBrandDomainService;
-                    return _cosmeticBrandDomainService.GetAll().Cast<CosmeticBrandModel>().ToList();
+                    _domainService = WindsorResolver.Instance.GetInstanceOfDomainService(new CosmeticBrandModel());
+                    return _domainService.GetAll().Cast<CosmeticBrandModel>().ToList();
                 default:
                     throw new Exception("Cannot find brands");
             }
