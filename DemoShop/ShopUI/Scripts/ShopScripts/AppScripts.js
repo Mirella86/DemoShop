@@ -2,6 +2,12 @@
 /// <reference path="knockout-2.2.0.debug.js" />
 $(document).ready(function () {
 
+    var pattern = {
+        number: '^([1-9]|[1-9][0-9]|[1-9][0-9][0-9])$',
+        name: '^[a-zA-Z _-]{1,50}$',
+        alphanumeric: '^[a-zA-Z0-9 ]{1,5}$'
+    };
+
     function Category(id, name) {
         var self = this;
         self.Id = ko.observable(id);
@@ -32,23 +38,42 @@ $(document).ready(function () {
         self.ClothingId = ko.observable(clothingid);
         self.Size = ko.observable(size).extend(
         {
-            required: "Size needed"
+            required: { message: "Field required" },
+            pattern: {
+                message: "Must be alphanumeric value  of max 5 characters",
+                params: pattern.alphanumeric
+            }
         });
-        self.Stock = ko.observable(stock).extend({ required: "Stock needed" });
+        self.Stock = ko.observable(stock).extend(
+        {
+            required: { message: "Field required" },
+            pattern: {
+                message: "Must be a numeric value",
+                params: pattern.number
+            }
+        });
+
+
+        self.stockErrors = ko.validation.group(self.Stock(), self.Size());
 
         self.saveStock = function (stock) {
-            $.ajax({
-                url: 'http://localhost/ShopWebApi/api/ClothingStock/',
-                type: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                data: ko.toJSON(stock),
-                success: function () {
-                    alert("Stock succesfully saved");
-                },
-                error: function () {
-                    alert("Error saving stock");
-                }
-            });
+            if (self.stockErrors().length == 0) {
+
+                $.ajax({
+                    url: 'http://localhost/ShopWebApi/api/ClothingStock/',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: ko.toJSON(stock),
+                    success: function () {
+                        alert("Stock succesfully saved");
+                    },
+                    error: function () {
+                        alert("Error saving stock");
+                    }
+                });
+            } else {
+                self.showAllMessages();
+            }
         };
 
     }
@@ -58,7 +83,13 @@ $(document).ready(function () {
     function Product(id, name, genderId, genderName, brandId, brandName, categoryId, categoryName, stock, stockList, areFieldsEditable) {
         var self = this;
         self.ID = ko.observable(id);
-        self.Name = ko.observable(name);
+        self.Name = ko.observable(name).extend({
+            required: { message: "Field required" },
+            pattern: {
+                message: 'Must be maximum 50 alphabetic characters',
+                params: pattern.name
+            }
+        });
         self.GenderId = ko.observable(genderId);
         self.GenderName = ko.observable(genderName);
         self.BrandId = ko.observable(brandId);
@@ -66,13 +97,25 @@ $(document).ready(function () {
         self.CategoryId = ko.observable(categoryId);
         self.CategoryName = ko.observable(categoryName);
 
-        self.Stock = ko.observable(stock);
+        self.Stock = ko.observable(stock).extend({
+            required: {
+                message: "Field required"
+            },
+            pattern: {
+                message: "Value must be numeric",
+                params: pattern.number
+            }
+        });
+
         self.StockList = ko.observableArray([]);
         if (stockList != undefined) {
             $.each(stockList, function (index, value) {
                 self.StockList.push(new Stock(value.Id, value.ClothingId, value.Size, value.Stock));
             });
         }
+
+
+        self.productErrors = ko.validation.group(self.Name(), self.Stock());
 
         self.addStock = function () {
             self.StockList.push(new Stock(0, self.ID, 0, 0));
@@ -113,6 +156,7 @@ $(document).ready(function () {
         self.availableBrands = ko.observableArray([]);
         self.availableCategories = ko.observableArray([]);
         self.availableGenders = ko.observableArray([]);
+
 
         self.getProductTypes = function () {
 
@@ -303,34 +347,38 @@ $(document).ready(function () {
         };
 
         self.saveProduct = function (product) {
-            product.areFieldsEditable(false);
-            if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
-                $.ajax({
-                    url: 'http://localhost/ShopWebApi/api/Clothing/',
-                    type: 'POST',
-                    contentType: 'application/json; charset=utf-8',
-                    data: ko.toJSON(product),
-                    success: function () {
-                        //        alert('save product success');
-                    },
-                    error: function () {
-                        alert("Error at saving clothing");
-                    }
-                });
-            } else {
-                $.ajax({
-                    url: 'http://localhost/ShopWebApi/api/Cosmetic/',
-                    type: 'POST',
-                    contentType: 'application/json; charset=utf-8',
-                    data: ko.toJSON(product),
-                    success: function () {
-                        //             alert('save product success');
-                    },
-                    error: function () {
-                        alert("Error saving cosmetic");
-                    }
-                });
+            if (product.productErrors.length == 0) {
+                product.areFieldsEditable(false);
+                if (self.chosenProductTypeId() == 1 || self.chosenProductTypeId() == undefined) {
+                    $.ajax({
+                        url: 'http://localhost/ShopWebApi/api/Clothing/',
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8',
+                        data: ko.toJSON(product),
+                        success: function () {
+                            //        alert('save product success');
+                        },
+                        error: function () {
+                            alert("Error at saving clothing");
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: 'http://localhost/ShopWebApi/api/Cosmetic/',
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8',
+                        data: ko.toJSON(product),
+                        success: function () {
+                            //             alert('save product success');
+                        },
+                        error: function () {
+                            alert("Error saving cosmetic");
+                        }
+                    });
 
+                }
+            } else {
+                product.showAllMessages();
             }
         };
 
