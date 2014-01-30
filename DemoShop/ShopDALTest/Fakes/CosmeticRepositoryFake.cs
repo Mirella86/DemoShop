@@ -4,16 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DBEntities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShopDAL;
 
 namespace ShopDALTest.Fakes
 {
-    public class CosmeticRepositoryFake :ICosmeticRepository
+    public class CosmeticRepositoryFake : ICosmeticRepository
     {
+        public List<Cosmetic> _cosmeticFakeList;
+
+        public CosmeticRepositoryFake()
+        {
+            _cosmeticFakeList = new List<Cosmetic>();
+            _cosmeticFakeList.Add(new Cosmetic { Name = "product1", Id = 1, Stock = 10, BrandId = 11, CategoryId = 111 });
+            _cosmeticFakeList.Add(new Cosmetic { Name = "product2", Id = 2, Stock = 20, BrandId = 22, CategoryId = 222 });
+        }
 
         public IEnumerable<Cosmetic> GetAll()
         {
-            throw new NotImplementedException();
+            return _cosmeticFakeList.ToList();
         }
 
         public IEnumerable<Cosmetic> GetAllWithChildren(IEnumerable<string> children)
@@ -23,7 +32,7 @@ namespace ShopDALTest.Fakes
 
         public Cosmetic Get(int key)
         {
-            throw new NotImplementedException();
+            return _cosmeticFakeList.SingleOrDefault(item => item.Id == key);
         }
 
         public Cosmetic GetWithChildren(Cosmetic entity, IEnumerable<string> children)

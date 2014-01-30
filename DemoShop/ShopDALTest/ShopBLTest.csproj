@@ -73,6 +73,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ClothingDomainServiceTest.cs" />
+    <Compile Include="CosmeticDomainServiceTest.cs" />
     <Compile Include="Fakes\ClothingRepositoryFake.cs" />
     <Compile Include="Fakes\CosmeticRepositoryFake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -35,7 +35,7 @@ namespace ShopDALTest
 
         public IEnumerable<Clothing> GetAll()
         {
-            throw new NotImplementedException();
+            return clothingFakeList;
         }
 
         public IEnumerable<Clothing> GetAllWithChildren(IEnumerable<string> children)
