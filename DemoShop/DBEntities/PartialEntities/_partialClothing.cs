@@ -11,7 +11,7 @@ namespace DBEntities
 
         public override bool CompareTo(IEntity clothing)
         {
-            return (this.Id == ((Clothing)clothing).Id);
+            return this.Id == ((Clothing)clothing).Id;
         }
     }
 }

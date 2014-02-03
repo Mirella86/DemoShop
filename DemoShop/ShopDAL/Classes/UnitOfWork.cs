@@ -13,7 +13,7 @@ namespace ShopDAL
     public class UnitOfWork<TEntity> : IDisposable where TEntity : class, IEntity
     {
         private DbContext _dbContext;
-        public DbSet<TEntity> dbSet;
+        public DbSet<TEntity> dbSet { get; set; }
 
         public UnitOfWork()
         {

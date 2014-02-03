@@ -9,8 +9,8 @@ namespace ShopDomainServices
 {
     public class DomainService<TEntity> : IDomainService<TEntity> where TEntity : class, IEntity
     {
-        protected IRepository<TEntity> _repository;
-        protected IMapper<TEntity> _mapper;
+        private IRepository<TEntity> _repository;
+        private IMapper<TEntity> _mapper;
 
         public DomainService(IRepository<TEntity> repository, IMapper<TEntity> mapper)
         {

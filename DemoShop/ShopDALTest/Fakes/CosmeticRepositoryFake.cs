@@ -11,7 +11,7 @@ namespace ShopDALTest.Fakes
 {
     public class CosmeticRepositoryFake : ICosmeticRepository
     {
-        public List<Cosmetic> _cosmeticFakeList;
+        private List<Cosmetic> _cosmeticFakeList;
 
         public CosmeticRepositoryFake()
         {

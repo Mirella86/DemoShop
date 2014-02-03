@@ -10,7 +10,7 @@ namespace DBEntities
     {
         public override bool CompareTo(IEntity cosmetic_Category)
         {
-            return (this.Id == ((Cosmetic_Category)cosmetic_Category).Id);
+            return this.Id == ((Cosmetic_Category)cosmetic_Category).Id;
         }
     }
 }

@@ -12,12 +12,10 @@ namespace WebApi.Controllers
 {
     public class ClothingController : ApiController
     {
-      //  private IClothingDomainService _clothingDomainService;
         private IDomainService _clothingDomainService;
 
         public ClothingController()
         {
-         //   _clothingDomainService = WindsorResolver.Instance.ClothingDomainService;
             _clothingDomainService = WindsorResolver.Instance.GetInstanceOfDomainService(new ClothingModel());
         }
 
@@ -26,11 +24,6 @@ namespace WebApi.Controllers
         {
             return _clothingDomainService.GetAll().Cast<ClothingModel>().ToList();
         }
-
-        //public ClothingModel GetById(int id)
-        //{
-        //    return (ClothingModel)_clothingDomainService.Get(id);
-        //}
 
         public void InsertOrUpdate(ClothingModel model)
         {
@@ -45,25 +38,5 @@ namespace WebApi.Controllers
             _clothingDomainService.Delete(id);
         }
 
-        //// GET api/values/5
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST api/values
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

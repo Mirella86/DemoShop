@@ -17,12 +17,5 @@ namespace ShopDomainServices
 
     public interface IDomainService<TEntity> : IDomainService where TEntity : class,  IEntity
     {
-
-        IEnumerable<Model> GetAll();
-        Model Get(int id);
-        Model GetWithChildren(int id, string[] children);
-        void Insert(Model entity);
-        void Delete(int entity);
-        void Update(Model entity);
     }
 }

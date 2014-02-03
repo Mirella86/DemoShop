@@ -20,7 +20,7 @@ namespace WebApplicationService
     {
         private static volatile WindsorResolver instance;
         private static object syncRoot = new Object();
-        public static WindsorContainer _container;
+        private static WindsorContainer _container;
 
         private WindsorResolver()
         {

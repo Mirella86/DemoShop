@@ -11,7 +11,7 @@ namespace ShopDALTest
 {
     public class ClothingRepositoryFake : IClothingRepository
     {
-        public List<Clothing> clothingFakeList;
+        private List<Clothing> clothingFakeList;
 
         public ClothingRepositoryFake()
         {

@@ -8,17 +8,6 @@ using DBEntities;
 
 namespace ShopDAL
 {
-    public interface IRepository
-    {
-        IEnumerable<IEntity> GetAll();
-        IEnumerable<IEntity> GetAllWithChildren(IEnumerable<string> children);
-        IEntity Get(int key);
-        IEntity GetWithChildren(IEntity entity, IEnumerable<string> children);
-        void Insert(IEntity entity);
-        void Update(IEntity entity);
-        void Delete(int key);
-    }
-
     public interface IRepository<TEntity> where TEntity : class,  IEntity
     {
         IEnumerable<TEntity> GetAll();
