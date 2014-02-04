@@ -3,7 +3,6 @@
 }
 
 <h2>Index</h2>
-
 <table>
     <thead>
         <tr>
@@ -16,7 +15,6 @@
             <th></th>
         </tr>
     </thead>
-
     <h2>Product list</h2>
     <tbody data-bind="foreach: products">
         <tr>
@@ -47,15 +45,15 @@
                 <table>
                     <thead>
                         <th></th>
-                        <th>Size</th>
-                        <th>Stock</th>
+                        <th data-bind="visible: StockList().length > 0">Size</th>
+                        <th data-bind="visible: StockList().length > 0">Stock</th>
                     </thead>
                     <tbody data-bind="foreach: StockList">
                         <tr>
                             <td>
                                 <input type="hidden" data-bind="value: Id" />
                                 <input type="hidden" data-bind="value: ClothingId" /></td>
-                            <td  style="width: 30px">
+                            <td style="width: 30px">
                                 <input data-bind="value: Size" />
                             </td>
                             <td>
@@ -75,8 +73,21 @@
     </tbody>
 </table>
 <button data-bind="click: addProduct, enable: products().length < 50">Add another product</button>
-<h3>Number of items:   <span data-bind="text: products().length" /></h3>
+<br />
+<table>
+    <tr>
+        <td>
+            <button data-bind="click: previousPage, enable: !currentPageIndex() == 0">previous page</button></td>
+        <td>
+            <label data-bind="text: currentPageIndex() + 1"></label>
+        </td>
+        <td>
+            <button data-bind="click: nextPage, enable: currentPageIndex() + 1 < totalPages()">next page</button></td>
+    </tr>
+</table>
 
+
+<h3>Number of items:   <span data-bind="text: products().length"></span></h3>
 
 
 

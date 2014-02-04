@@ -157,6 +157,18 @@ $(document).ready(function () {
         self.availableCategories = ko.observableArray([]);
         self.availableGenders = ko.observableArray([]);
 
+        self.currentPageIndex = ko.observable(0);
+        self.totalPages = ko.observable();
+
+        self.previousPage = function () {
+            self.currentPageIndex(self.currentPageIndex() - 1);
+            self.getProducts();
+        };
+
+        self.nextPage = function () {
+            self.currentPageIndex(self.currentPageIndex() + 1);
+            self.getProducts();
+        };
 
         self.getProductTypes = function () {
 
@@ -182,6 +194,7 @@ $(document).ready(function () {
             self.getProductTypes();
             self.initializeDropDowns();
 
+            self.getTotalPages();
             self.getProducts();
         };
 
@@ -262,21 +275,45 @@ $(document).ready(function () {
 
         };
 
+        self.getTotalPages = function () {
+            if (self.chosenProductTypeId() == undefined)
+                self.chosenProductTypeId(1);
+
+            if (self.chosenProductTypeId() == 1) {
+                var url = 'http://localhost/ShopWebApi/api/Clothing/GetTotalPages';
+            }
+            else if (self.chosenProductTypeId() == 2) {
+                var url = 'http://localhost/ShopWebApi/api/Cosmetic/GetTotalPages';
+            }
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    self.totalPages(data);
+                },
+                error: function () {
+                    alert("Error gettin data from server");
+                }
+            });
+
+        };
+
         self.getProducts = function () {
             if (self.chosenProductTypeId() == undefined)
                 self.chosenProductTypeId(1);
 
             if (self.chosenProductTypeId() == 1) {
-
+                var url = 'http://localhost/ShopWebApi/api/Clothing/GetAllClothing?pageIndex=' + self.currentPageIndex();
                 $.ajax({
-                    url: 'http://localhost/ShopWebApi/api/Clothing/',
+                    url: url,
                     type: 'GET',
                     contentType: 'application/json; charset=utf-8',
                     success: function (data) {
                         self.products.removeAll();
                         $.each(data, function (index, value) {
                             self.products.push(new Product(value.Id, value.Name, value.GenderId, value.GenderName, value.BrandId, value.BrandName, value.CategoryId, value.CategoryName, "", value.Stocks, false));
-
                         });
                     },
                     error: function () {
@@ -285,9 +322,9 @@ $(document).ready(function () {
                 });
             } else {
                 if (self.chosenProductTypeId() == 2) {
-
+                    var url = 'http://localhost/ShopWebApi/api/Cosmetic/' + self.currentPageIndex();
                     $.ajax({
-                        url: 'http://localhost/ShopWebApi/api/Cosmetic/',
+                        url: url,
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {
@@ -323,7 +360,7 @@ $(document).ready(function () {
                     type: 'DELETE',
                     contentType: 'application/json; charset=utf-8',
                     success: function () {
-                        //        alert("delete succesful");
+                        self.getTotalPages();
                     },
                     error: function () {
                         alert("error deleting product");
@@ -337,6 +374,7 @@ $(document).ready(function () {
                         type: 'GET',
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {
+                            self.getTotalPages();
                         },
                         error: function () {
                             alert("Error deleting product");
@@ -356,7 +394,7 @@ $(document).ready(function () {
                         contentType: 'application/json; charset=utf-8',
                         data: ko.toJSON(product),
                         success: function () {
-                            //        alert('save product success');
+                            self.getTotalPages();
                         },
                         error: function () {
                             alert("Error at saving clothing");
@@ -369,7 +407,7 @@ $(document).ready(function () {
                         contentType: 'application/json; charset=utf-8',
                         data: ko.toJSON(product),
                         success: function () {
-                            //             alert('save product success');
+                            self.getTotalPages();
                         },
                         error: function () {
                             alert("Error saving cosmetic");
